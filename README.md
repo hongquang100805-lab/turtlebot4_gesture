@@ -419,26 +419,7 @@ sudo apt install ros-jazzy-turtlebot4-simulator ros-jazzy-irobot-create-nodes \
 Gazebo dùng Harmonic (gz-sim 8); xem [cài Harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/)
 nếu máy chưa có. Không cần build simulator từ source.
 
-## 8. Checklist quay video và nộp bài
-
-- [ ] Robot trong Gazebo; `/scan`, `/odom`, `/cmd_vel` hoạt động như phần 1.
-- [ ] RViz hiển thị robot/LiDAR; teleop sau undock làm robot di chuyển.
-- [ ] Khảo sát phần lớn vùng đi được, Map cập nhật, tường không bị nhân đôi/lệch rõ rệt.
-- [ ] Lưu `map.yaml` + `map.pgm`, quay bản đồ hoàn chỉnh.
-- [ ] Dừng SLAM, khởi động lại cùng world, load map và đặt initial pose đúng.
-- [ ] LiDAR khớp map, vị trí robot trong RViz tương ứng Gazebo.
-- [ ] Ba Nav2 goal ở ba vùng khác nhau, từng goal thành công và không va chạm.
-- [ ] Không điều khiển thủ công sau khi gửi goal.
-- [ ] Nộp source cùng map thật; `.gitignore` giữ YAML/PGM, bỏ build/install/log.
-
-Link GitHub: **[tự bổ sung]**
-
-Link Google Drive video: **[tự bổ sung]**
-
-Kết quả kiểm tra đã thực hiện: [VALIDATION.md](VALIDATION.md).
-Build hoặc Nav2 active chưa chứng minh đã hoàn thành khảo sát và ba goal.
-
-Tài liệu chính thức: [Simulator Jazzy](https://turtlebot.github.io/turtlebot4-user-manual/software/turtlebot4_simulator.html),
+re/turtlebot4_simulator.html),
 [source nhánh jazzy](https://github.com/turtlebot/turtlebot4_simulator/tree/jazzy),
 [tạo map](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/generate_map.html),
 [navigation](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/navigation.html).
