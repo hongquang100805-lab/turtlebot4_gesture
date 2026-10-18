@@ -269,17 +269,6 @@ Ghi xong thì `Ctrl+C` recorder. Khi chạy node điều hướng, truyền `goa
 | `scripts/setup_yolo.sh` | Chuẩn bị môi trường inference |
 | `setup.py`, `package.xml` | Đóng gói node và khai báo phụ thuộc |
 
-## 8. Video, ảnh và báo cáo đã thực hiện
-
-Lần chạy ngày 18/10/2026 đã hoàn thành **6/6 goal**; dữ liệu được giữ riêng, không bị các lệnh ở trên ghi đè:
-
-- [Video 6 goal](videos/tb4_6goals_demo_2026-10-18/TurtleBot4_6Goals_Nav2_YOLO.webm).
-- [Kết quả action thực tế](videos/tb4_6goals_demo_2026-10-18/results.json).
-- [Ảnh minh chứng và dữ liệu báo cáo](videos/tb4_6goals_demo_2026-10-18/Anh_bao_cao_6_goal.zip).
-- [Phân tích YOLO theo mẫu log và ảnh đối chiếu](videos/tb4_6goals_demo_2026-10-18/yolo_evaluation/PHAN_TICH_YOLO.md).
-
-Phần thống kê YOLO dùng **160 mẫu log, 94 box thuộc 9 lớp** trong chuỗi 6 goal. Log terminal chỉ in khoảng mỗi 2 giây, nên không dùng số box này làm tổng mọi ảnh hoặc số vật thể duy nhất. Đánh giá đúng/sai trong báo cáo dựa trên ảnh đã đối chiếu; chưa có ground truth để tính precision/recall/mAP.
-
 ## 9. Dừng chương trình
 
 1. `Ctrl+C` terminal B; node yêu cầu hủy action nếu robot còn đang thực hiện goal.
