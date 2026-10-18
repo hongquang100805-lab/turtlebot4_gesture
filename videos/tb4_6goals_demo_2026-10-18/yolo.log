@@ -1,0 +1,238 @@
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/lenovo/.config/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+[INFO] [1792290824.583842203] [yolo_detector]: YOLO san sang: yolo11n.pt; input=/oakd/rgb/preview/image_raw; max_fps=2.0
+[INFO] [1792290825.284092144] [yolo_detector]: 1 vat the; 326 ms: person conf=0.84 bbox=[85.0, 45.6, 117.6, 136.6]
+[INFO] [1792290827.483783063] [yolo_detector]: 1 vat the; 42 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290829.533892311] [yolo_detector]: 1 vat the; 77 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290831.983927152] [yolo_detector]: 1 vat the; 35 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290833.984635996] [yolo_detector]: 1 vat the; 52 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290835.984580816] [yolo_detector]: 1 vat the; 54 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290838.484207702] [yolo_detector]: 1 vat the; 49 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290840.483969031] [yolo_detector]: 1 vat the; 50 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290842.984398911] [yolo_detector]: 1 vat the; 53 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290845.533903454] [yolo_detector]: 1 vat the; 71 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290847.534127313] [yolo_detector]: 1 vat the; 92 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290850.035482628] [yolo_detector]: 1 vat the; 63 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290853.434737538] [yolo_detector]: 1 vat the; 1922 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290857.493988070] [yolo_detector]: 1 vat the; 2447 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290860.784255887] [yolo_detector]: 1 vat the; 2005 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290862.835570873] [yolo_detector]: 1 vat the; 2026 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290866.533994537] [yolo_detector]: 1 vat the; 1766 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290869.184303182] [yolo_detector]: 1 vat the; 1634 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290872.084773253] [yolo_detector]: 1 vat the; 2913 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290874.584265485] [yolo_detector]: 1 vat the; 2502 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290876.988813257] [yolo_detector]: 1 vat the; 2414 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290881.585179974] [yolo_detector]: 1 vat the; 2909 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290884.234171912] [yolo_detector]: 1 vat the; 2623 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290888.384937119] [yolo_detector]: 1 vat the; 2291 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290890.884012929] [yolo_detector]: 1 vat the; 98 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290894.044976172] [yolo_detector]: 1 vat the; 1130 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290899.253046611] [yolo_detector]: 1 vat the; 4718 ms: person conf=0.85 bbox=[84.3, 44.7, 117.5, 135.7]
+[INFO] [1792290904.084650825] [yolo_detector]: 2 vat the; 3714 ms: person conf=0.85 bbox=[85.4, 46.1, 118.2, 135.5]; chair conf=0.42 bbox=[118.4, 212.2, 200.7, 240.0]
+[INFO] [1792290906.597651208] [yolo_detector]: 2 vat the; 1026 ms: person conf=0.86 bbox=[88.3, 49.8, 120.0, 134.3]; suitcase conf=0.35 bbox=[127.9, 183.1, 192.7, 238.6]
+[INFO] [1792290910.435206101] [yolo_detector]: 2 vat the; 2009 ms: person conf=0.79 bbox=[90.0, 52.2, 120.3, 134.9]; suitcase conf=0.73 bbox=[130.1, 174.1, 189.9, 239.6]
+[INFO] [1792290913.285208932] [yolo_detector]: 2 vat the; 914 ms: suitcase conf=0.78 bbox=[132.8, 169.4, 187.0, 226.9]; person conf=0.77 bbox=[90.7, 52.9, 120.2, 135.1]
+[INFO] [1792290916.137891682] [yolo_detector]: 2 vat the; 1326 ms: person conf=0.73 bbox=[166.1, 53.0, 193.3, 134.5]; suitcase conf=0.64 bbox=[198.2, 172.4, 259.2, 232.7]
+[INFO] [1792290918.393529419] [yolo_detector]: 4 vat the; 2224 ms: person conf=0.80 bbox=[191.8, 51.7, 222.1, 135.2]; suitcase conf=0.69 bbox=[224.0, 174.1, 289.4, 238.2]; chair conf=0.28 bbox=[84.2, 7.2, 117.8, 32.7]; chair conf=0.27 bbox=[54.7, 16.0, 85.1, 33.1]
+[INFO] [1792290922.234609942] [yolo_detector]: 1 vat the; 1864 ms: umbrella conf=0.38 bbox=[188.2, 0.5, 319.9, 86.1]
+[INFO] [1792290925.137511483] [yolo_detector]: 1 vat the; 2913 ms: person conf=0.80 bbox=[63.4, 62.1, 83.1, 129.5]
+[INFO] [1792290927.184578457] [yolo_detector]: 0 vat the; 45 ms: khong co detection tren frame nay
+[INFO] [1792290929.233917574] [yolo_detector]: 0 vat the; 56 ms: khong co detection tren frame nay
+[INFO] [1792290931.233806126] [yolo_detector]: 0 vat the; 77 ms: khong co detection tren frame nay
+[INFO] [1792290933.684389064] [yolo_detector]: 0 vat the; 39 ms: khong co detection tren frame nay
+[INFO] [1792290936.234046855] [yolo_detector]: 0 vat the; 67 ms: khong co detection tren frame nay
+[INFO] [1792290938.684143657] [yolo_detector]: 0 vat the; 48 ms: khong co detection tren frame nay
+[INFO] [1792290941.185033575] [yolo_detector]: 0 vat the; 44 ms: khong co detection tren frame nay
+[INFO] [1792290943.184849459] [yolo_detector]: 0 vat the; 44 ms: khong co detection tren frame nay
+[INFO] [1792290945.185476272] [yolo_detector]: 0 vat the; 50 ms: khong co detection tren frame nay
+[INFO] [1792290947.733888300] [yolo_detector]: 0 vat the; 51 ms: khong co detection tren frame nay
+[INFO] [1792290950.234593105] [yolo_detector]: 0 vat the; 48 ms: khong co detection tren frame nay
+[INFO] [1792290952.683788616] [yolo_detector]: 0 vat the; 33 ms: khong co detection tren frame nay
+[INFO] [1792290954.684300280] [yolo_detector]: 0 vat the; 40 ms: khong co detection tren frame nay
+[INFO] [1792290956.685265854] [yolo_detector]: 0 vat the; 32 ms: khong co detection tren frame nay
+[INFO] [1792290958.733907223] [yolo_detector]: 0 vat the; 59 ms: khong co detection tren frame nay
+[INFO] [1792290960.734647824] [yolo_detector]: 0 vat the; 53 ms: khong co detection tren frame nay
+[INFO] [1792290963.234030653] [yolo_detector]: 0 vat the; 50 ms: khong co detection tren frame nay
+[INFO] [1792290965.734845287] [yolo_detector]: 0 vat the; 54 ms: khong co detection tren frame nay
+[INFO] [1792290968.233835417] [yolo_detector]: 0 vat the; 59 ms: khong co detection tren frame nay
+[INFO] [1792290971.087480464] [yolo_detector]: 0 vat the; 921 ms: khong co detection tren frame nay
+[INFO] [1792290973.134393569] [yolo_detector]: 0 vat the; 68 ms: khong co detection tren frame nay
+[INFO] [1792290975.683934561] [yolo_detector]: 0 vat the; 74 ms: khong co detection tren frame nay
+[INFO] [1792290978.134095602] [yolo_detector]: 0 vat the; 45 ms: khong co detection tren frame nay
+[INFO] [1792290980.134440835] [yolo_detector]: 0 vat the; 60 ms: khong co detection tren frame nay
+[INFO] [1792290982.388839131] [yolo_detector]: 0 vat the; 313 ms: khong co detection tren frame nay
+[INFO] [1792290984.634576920] [yolo_detector]: 0 vat the; 66 ms: khong co detection tren frame nay
+[INFO] [1792290987.184299782] [yolo_detector]: 0 vat the; 85 ms: khong co detection tren frame nay
+[INFO] [1792290989.634750128] [yolo_detector]: 0 vat the; 35 ms: khong co detection tren frame nay
+[INFO] [1792290991.684378415] [yolo_detector]: 0 vat the; 87 ms: khong co detection tren frame nay
+[INFO] [1792290994.184044030] [yolo_detector]: 0 vat the; 75 ms: khong co detection tren frame nay
+[INFO] [1792290996.185090163] [yolo_detector]: 0 vat the; 89 ms: khong co detection tren frame nay
+[INFO] [1792290998.635326505] [yolo_detector]: 0 vat the; 57 ms: khong co detection tren frame nay
+[INFO] [1792291001.184243526] [yolo_detector]: 1 vat the; 70 ms: airplane conf=0.39 bbox=[0.5, 41.3, 137.5, 149.1]
+[INFO] [1792291003.335526165] [yolo_detector]: 1 vat the; 243 ms: airplane conf=0.39 bbox=[0.5, 41.4, 137.5, 149.1]
+[INFO] [1792291005.636316609] [yolo_detector]: 1 vat the; 39 ms: airplane conf=0.39 bbox=[0.5, 41.4, 137.5, 149.1]
+[INFO] [1792291007.683962503] [yolo_detector]: 1 vat the; 58 ms: airplane conf=0.39 bbox=[0.5, 41.4, 137.5, 149.1]
+[INFO] [1792291010.184113821] [yolo_detector]: 0 vat the; 59 ms: khong co detection tren frame nay
+[INFO] [1792291012.634104593] [yolo_detector]: 1 vat the; 52 ms: person conf=0.83 bbox=[23.8, 69.8, 43.0, 127.6]
+[INFO] [1792291014.684317946] [yolo_detector]: 1 vat the; 62 ms: person conf=0.71 bbox=[112.4, 77.1, 128.4, 127.4]
+[INFO] [1792291017.134326225] [yolo_detector]: 1 vat the; 37 ms: person conf=0.79 bbox=[108.0, 73.1, 125.7, 127.2]
+[INFO] [1792291019.434893634] [yolo_detector]: 1 vat the; 236 ms: person conf=0.75 bbox=[112.3, 72.7, 129.4, 127.2]
+[INFO] [1792291021.784294336] [yolo_detector]: 0 vat the; 70 ms: khong co detection tren frame nay
+[INFO] [1792291023.784125853] [yolo_detector]: 1 vat the; 66 ms: person conf=0.79 bbox=[107.5, 68.5, 125.4, 127.2]
+[INFO] [1792291026.284227553] [yolo_detector]: 1 vat the; 55 ms: person conf=0.62 bbox=[121.4, 65.4, 140.2, 128.8]
+[INFO] [1792291028.784214925] [yolo_detector]: 1 vat the; 78 ms: person conf=0.80 bbox=[121.8, 60.6, 142.8, 128.6]
+[INFO] [1792291031.284353221] [yolo_detector]: 1 vat the; 50 ms: person conf=0.76 bbox=[109.1, 55.9, 131.7, 130.4]
+[INFO] [1792291033.784098355] [yolo_detector]: 1 vat the; 49 ms: person conf=0.81 bbox=[117.1, 53.4, 140.0, 130.3]
+[INFO] [1792291035.784202167] [yolo_detector]: 1 vat the; 84 ms: person conf=0.89 bbox=[120.7, 46.8, 146.7, 131.0]
+[INFO] [1792291038.285429282] [yolo_detector]: 1 vat the; 74 ms: person conf=0.89 bbox=[119.6, 40.6, 147.3, 131.9]
+[INFO] [1792291040.784003105] [yolo_detector]: 1 vat the; 65 ms: person conf=0.89 bbox=[130.6, 32.2, 158.7, 133.3]
+[INFO] [1792291042.784192163] [yolo_detector]: 2 vat the; 48 ms: person conf=0.89 bbox=[133.0, 26.0, 164.5, 134.6]; person conf=0.42 bbox=[309.6, 60.2, 319.9, 127.2]
+[INFO] [1792291044.985020512] [yolo_detector]: 1 vat the; 251 ms: person conf=0.89 bbox=[107.2, 19.8, 140.5, 136.6]
+[INFO] [1792291047.284251059] [yolo_detector]: 0 vat the; 81 ms: khong co detection tren frame nay
+[INFO] [1792291049.284343942] [yolo_detector]: 1 vat the; 59 ms: person conf=0.30 bbox=[265.1, 62.1, 286.3, 130.2]
+[INFO] [1792291051.885320489] [yolo_detector]: 1 vat the; 159 ms: person conf=0.31 bbox=[265.1, 61.1, 286.3, 130.2]
+[INFO] [1792291054.283977961] [yolo_detector]: 1 vat the; 48 ms: person conf=0.31 bbox=[265.1, 61.1, 286.3, 130.2]
+[INFO] [1792291056.784174996] [yolo_detector]: 0 vat the; 63 ms: khong co detection tren frame nay
+[INFO] [1792291059.284231674] [yolo_detector]: 0 vat the; 38 ms: khong co detection tren frame nay
+[INFO] [1792291061.785724218] [yolo_detector]: 0 vat the; 68 ms: khong co detection tren frame nay
+[INFO] [1792291064.284347560] [yolo_detector]: 0 vat the; 48 ms: khong co detection tren frame nay
+[INFO] [1792291066.596164712] [yolo_detector]: 0 vat the; 345 ms: khong co detection tren frame nay
+[INFO] [1792291068.783974638] [yolo_detector]: 0 vat the; 42 ms: khong co detection tren frame nay
+[INFO] [1792291070.785920893] [yolo_detector]: 0 vat the; 31 ms: khong co detection tren frame nay
+[INFO] [1792291073.284372015] [yolo_detector]: 0 vat the; 30 ms: khong co detection tren frame nay
+[INFO] [1792291075.784097864] [yolo_detector]: 0 vat the; 46 ms: khong co detection tren frame nay
+[INFO] [1792291077.834834087] [yolo_detector]: 0 vat the; 79 ms: khong co detection tren frame nay
+[INFO] [1792291080.284176193] [yolo_detector]: 0 vat the; 64 ms: khong co detection tren frame nay
+[INFO] [1792291082.784148419] [yolo_detector]: 0 vat the; 27 ms: khong co detection tren frame nay
+[INFO] [1792291085.284103406] [yolo_detector]: 0 vat the; 54 ms: khong co detection tren frame nay
+[INFO] [1792291087.784621068] [yolo_detector]: 0 vat the; 72 ms: khong co detection tren frame nay
+[INFO] [1792291090.283991717] [yolo_detector]: 0 vat the; 66 ms: khong co detection tren frame nay
+[INFO] [1792291092.784166065] [yolo_detector]: 0 vat the; 42 ms: khong co detection tren frame nay
+[INFO] [1792291094.784232591] [yolo_detector]: 0 vat the; 27 ms: khong co detection tren frame nay
+[INFO] [1792291096.884786750] [yolo_detector]: 0 vat the; 167 ms: khong co detection tren frame nay
+[INFO] [1792291098.938229605] [yolo_detector]: 0 vat the; 200 ms: khong co detection tren frame nay
+[INFO] [1792291101.284248376] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291103.834000478] [yolo_detector]: 0 vat the; 108 ms: khong co detection tren frame nay
+[INFO] [1792291106.334264847] [yolo_detector]: 0 vat the; 86 ms: khong co detection tren frame nay
+[INFO] [1792291108.784559410] [yolo_detector]: 1 vat the; 50 ms: fire hydrant conf=0.28 bbox=[55.4, 114.7, 67.0, 130.5]
+[INFO] [1792291110.985955742] [yolo_detector]: 0 vat the; 245 ms: khong co detection tren frame nay
+[INFO] [1792291113.585023352] [yolo_detector]: 0 vat the; 320 ms: khong co detection tren frame nay
+[INFO] [1792291115.784578217] [yolo_detector]: 0 vat the; 57 ms: khong co detection tren frame nay
+[INFO] [1792291118.334573267] [yolo_detector]: 0 vat the; 71 ms: khong co detection tren frame nay
+[INFO] [1792291120.836798220] [yolo_detector]: 0 vat the; 69 ms: khong co detection tren frame nay
+[INFO] [1792291123.334450738] [yolo_detector]: 0 vat the; 63 ms: khong co detection tren frame nay
+[INFO] [1792291125.784396551] [yolo_detector]: 2 vat the; 54 ms: chair conf=0.36 bbox=[218.4, 64.8, 239.4, 78.9]; chair conf=0.27 bbox=[239.4, 48.6, 262.2, 62.7]
+[INFO] [1792291127.786185573] [yolo_detector]: 2 vat the; 54 ms: chair conf=0.34 bbox=[154.9, 71.1, 171.7, 82.4]; chair conf=0.25 bbox=[200.2, 60.2, 222.3, 78.2]
+[INFO] [1792291130.283811944] [yolo_detector]: 0 vat the; 43 ms: khong co detection tren frame nay
+[INFO] [1792291132.334264491] [yolo_detector]: 1 vat the; 84 ms: person conf=0.48 bbox=[277.3, 76.9, 299.2, 130.6]
+[INFO] [1792291134.834191383] [yolo_detector]: 1 vat the; 56 ms: person conf=0.34 bbox=[286.6, 74.0, 310.4, 131.0]
+[INFO] [1792291136.836569220] [yolo_detector]: 1 vat the; 84 ms: person conf=0.56 bbox=[283.2, 71.4, 306.6, 131.8]
+[INFO] [1792291139.334051881] [yolo_detector]: 1 vat the; 53 ms: chair conf=0.25 bbox=[263.6, 27.1, 301.4, 51.4]
+[INFO] [1792291141.334077885] [yolo_detector]: 2 vat the; 65 ms: chair conf=0.27 bbox=[276.1, 15.8, 319.5, 40.7]; chair conf=0.27 bbox=[204.9, 30.2, 235.6, 54.5]
+[INFO] [1792291143.334837619] [yolo_detector]: 2 vat the; 69 ms: chair conf=0.29 bbox=[203.9, 21.6, 236.9, 41.1]; chair conf=0.26 bbox=[242.0, 13.3, 279.4, 36.5]
+[INFO] [1792291145.834145229] [yolo_detector]: 0 vat the; 66 ms: khong co detection tren frame nay
+[INFO] [1792291147.835111196] [yolo_detector]: 0 vat the; 80 ms: khong co detection tren frame nay
+[INFO] [1792291150.334403576] [yolo_detector]: 0 vat the; 68 ms: khong co detection tren frame nay
+[INFO] [1792291152.335626304] [yolo_detector]: 1 vat the; 55 ms: umbrella conf=0.32 bbox=[0.0, 0.0, 318.5, 58.4]
+[INFO] [1792291154.835093042] [yolo_detector]: 0 vat the; 64 ms: khong co detection tren frame nay
+[INFO] [1792291157.285744516] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291159.335971588] [yolo_detector]: 0 vat the; 57 ms: khong co detection tren frame nay
+[INFO] [1792291161.784239698] [yolo_detector]: 0 vat the; 26 ms: khong co detection tren frame nay
+[INFO] [1792291163.785982065] [yolo_detector]: 0 vat the; 39 ms: khong co detection tren frame nay
+[INFO] [1792291165.834529272] [yolo_detector]: 0 vat the; 60 ms: khong co detection tren frame nay
+[INFO] [1792291168.334282487] [yolo_detector]: 0 vat the; 44 ms: khong co detection tren frame nay
+[INFO] [1792291170.334430793] [yolo_detector]: 0 vat the; 47 ms: khong co detection tren frame nay
+[INFO] [1792291172.835038375] [yolo_detector]: 0 vat the; 60 ms: khong co detection tren frame nay
+[INFO] [1792291175.384521433] [yolo_detector]: 0 vat the; 93 ms: khong co detection tren frame nay
+[INFO] [1792291177.834054227] [yolo_detector]: 1 vat the; 70 ms: refrigerator conf=0.33 bbox=[0.2, 1.6, 29.5, 137.6]
+[INFO] [1792291180.334027520] [yolo_detector]: 0 vat the; 52 ms: khong co detection tren frame nay
+[INFO] [1792291182.334490720] [yolo_detector]: 3 vat the; 62 ms: cup conf=0.34 bbox=[192.0, 46.5, 214.6, 76.0]; cup conf=0.30 bbox=[215.5, 44.7, 233.2, 65.5]; cup conf=0.28 bbox=[172.4, 48.3, 192.7, 77.0]
+[INFO] [1792291184.834508416] [yolo_detector]: 3 vat the; 68 ms: cup conf=0.34 bbox=[192.0, 46.5, 214.6, 76.0]; cup conf=0.30 bbox=[215.5, 44.7, 233.2, 65.5]; cup conf=0.28 bbox=[172.4, 48.3, 192.7, 77.0]
+[INFO] [1792291186.935740474] [yolo_detector]: 3 vat the; 164 ms: cup conf=0.34 bbox=[192.0, 46.5, 214.6, 76.0]; cup conf=0.30 bbox=[215.5, 44.7, 233.2, 65.5]; cup conf=0.28 bbox=[172.4, 48.3, 192.7, 77.0]
+[INFO] [1792291188.985158478] [yolo_detector]: 3 vat the; 223 ms: cup conf=0.34 bbox=[192.0, 46.5, 214.6, 76.0]; cup conf=0.30 bbox=[215.5, 44.7, 233.2, 65.5]; cup conf=0.28 bbox=[172.4, 48.3, 192.7, 77.0]
+[INFO] [1792291191.334748337] [yolo_detector]: 0 vat the; 57 ms: khong co detection tren frame nay
+[INFO] [1792291193.834797757] [yolo_detector]: 0 vat the; 63 ms: khong co detection tren frame nay
+[INFO] [1792291195.883797256] [yolo_detector]: 3 vat the; 74 ms: cup conf=0.39 bbox=[185.4, 45.5, 205.3, 74.8]; cup conf=0.28 bbox=[204.7, 48.2, 223.5, 76.2]; cup conf=0.25 bbox=[144.7, 39.1, 165.5, 66.0]
+[INFO] [1792291198.334462467] [yolo_detector]: 0 vat the; 64 ms: khong co detection tren frame nay
+[INFO] [1792291200.334895779] [yolo_detector]: 0 vat the; 59 ms: khong co detection tren frame nay
+[INFO] [1792291202.485263833] [yolo_detector]: 0 vat the; 201 ms: khong co detection tren frame nay
+[INFO] [1792291204.634948178] [yolo_detector]: 0 vat the; 326 ms: khong co detection tren frame nay
+[INFO] [1792291206.634280915] [yolo_detector]: 0 vat the; 353 ms: khong co detection tren frame nay
+[INFO] [1792291208.834203620] [yolo_detector]: 0 vat the; 61 ms: khong co detection tren frame nay
+[INFO] [1792291211.334654899] [yolo_detector]: 0 vat the; 42 ms: khong co detection tren frame nay
+[INFO] [1792291213.383837412] [yolo_detector]: 0 vat the; 68 ms: khong co detection tren frame nay
+[INFO] [1792291215.834247210] [yolo_detector]: 0 vat the; 35 ms: khong co detection tren frame nay
+[INFO] [1792291217.834203027] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291219.834393216] [yolo_detector]: 1 vat the; 56 ms: tv conf=0.29 bbox=[0.3, 0.0, 236.4, 138.2]
+[INFO] [1792291222.384523123] [yolo_detector]: 1 vat the; 77 ms: umbrella conf=0.27 bbox=[0.2, 1.2, 259.4, 129.1]
+[INFO] [1792291224.834805760] [yolo_detector]: 0 vat the; 44 ms: khong co detection tren frame nay
+[INFO] [1792291226.884188810] [yolo_detector]: 0 vat the; 64 ms: khong co detection tren frame nay
+[INFO] [1792291229.333870764] [yolo_detector]: 0 vat the; 29 ms: khong co detection tren frame nay
+[INFO] [1792291231.586460549] [yolo_detector]: 0 vat the; 274 ms: khong co detection tren frame nay
+[INFO] [1792291233.986845958] [yolo_detector]: 0 vat the; 196 ms: khong co detection tren frame nay
+[INFO] [1792291236.084286799] [yolo_detector]: 0 vat the; 156 ms: khong co detection tren frame nay
+[INFO] [1792291238.484332341] [yolo_detector]: 1 vat the; 60 ms: umbrella conf=0.37 bbox=[0.3, 0.6, 233.7, 93.1]
+[INFO] [1792291240.983958319] [yolo_detector]: 0 vat the; 56 ms: khong co detection tren frame nay
+[INFO] [1792291243.534445128] [yolo_detector]: 5 vat the; 108 ms: person conf=0.90 bbox=[187.0, 19.9, 221.3, 136.2]; chair conf=0.32 bbox=[269.2, 33.6, 299.1, 54.1]; chair conf=0.30 bbox=[244.2, 54.9, 269.9, 72.9]; chair conf=0.29 bbox=[301.1, 49.3, 319.8, 68.0]; chair conf=0.28 bbox=[268.9, 52.1, 298.8, 69.5]
+[INFO] [1792291246.034759665] [yolo_detector]: 3 vat the; 119 ms: person conf=0.87 bbox=[97.8, 7.7, 135.9, 137.0]; chair conf=0.34 bbox=[180.9, 55.9, 205.4, 72.1]; chair conf=0.32 bbox=[157.3, 55.5, 180.6, 72.3]
+[INFO] [1792291248.434164563] [yolo_detector]: 5 vat the; 497 ms: person conf=0.83 bbox=[89.3, 0.0, 131.7, 138.7]; chair conf=0.30 bbox=[230.2, 52.0, 255.8, 69.4]; chair conf=0.29 bbox=[155.6, 53.3, 179.7, 68.9]; chair conf=0.28 bbox=[179.3, 51.7, 205.1, 69.4]; chair conf=0.27 bbox=[255.2, 52.1, 281.3, 69.1]
+[INFO] [1792291250.542540216] [yolo_detector]: 1 vat the; 260 ms: person conf=0.80 bbox=[89.9, 0.0, 133.1, 141.4]
+[INFO] [1792291252.635017396] [yolo_detector]: 2 vat the; 350 ms: person conf=0.81 bbox=[89.3, 1.7, 134.7, 139.9]; chair conf=0.26 bbox=[184.9, 46.5, 212.8, 65.6]
+[INFO] [1792291255.035640045] [yolo_detector]: 9 vat the; 235 ms: person conf=0.81 bbox=[78.2, 0.0, 125.4, 141.4]; chair conf=0.33 bbox=[291.7, 45.4, 319.5, 63.7]; chair conf=0.32 bbox=[124.6, 43.7, 152.4, 63.3]; chair conf=0.31 bbox=[263.5, 53.8, 292.0, 63.6]; chair conf=0.31 bbox=[263.4, 45.0, 292.1, 63.3]; chair conf=0.30 bbox=[236.0, 45.6, 264.9, 62.5]; chair conf=0.27 bbox=[180.1, 44.1, 209.2, 63.1]; chair conf=0.26 bbox=[212.4, 44.0, 236.5, 63.4]; chair conf=0.25 bbox=[152.4, 43.8, 180.6, 62.9]
+[INFO] [1792291257.384170568] [yolo_detector]: 6 vat the; 62 ms: person conf=0.81 bbox=[66.3, 0.6, 118.4, 144.7]; chair conf=0.41 bbox=[153.0, 35.8, 183.1, 56.8]; chair conf=0.40 bbox=[120.1, 35.3, 153.1, 55.6]; chair conf=0.34 bbox=[244.6, 36.5, 277.6, 56.4]; chair conf=0.27 bbox=[276.1, 36.9, 308.0, 55.7]; chair conf=0.26 bbox=[182.6, 36.3, 216.4, 56.7]
+[INFO] [1792291259.384143474] [yolo_detector]: 2 vat the; 51 ms: person conf=0.86 bbox=[51.2, 0.0, 107.5, 148.4]; chair conf=0.37 bbox=[151.5, 27.2, 184.7, 50.4]
+[INFO] [1792291261.384328301] [yolo_detector]: 1 vat the; 79 ms: person conf=0.84 bbox=[41.1, 0.0, 104.6, 152.5]
+[INFO] [1792291263.833995406] [yolo_detector]: 3 vat the; 36 ms: person conf=0.88 bbox=[2.9, 0.3, 91.0, 164.2]; chair conf=0.37 bbox=[157.9, 0.8, 201.9, 27.9]; chair conf=0.31 bbox=[116.0, 1.2, 160.0, 27.7]
+[INFO] [1792291265.885365713] [yolo_detector]: 0 vat the; 72 ms: khong co detection tren frame nay
+[INFO] [1792291268.384831660] [yolo_detector]: 0 vat the; 76 ms: khong co detection tren frame nay
+[INFO] [1792291270.884127676] [yolo_detector]: 0 vat the; 49 ms: khong co detection tren frame nay
+[INFO] [1792291273.385157582] [yolo_detector]: 0 vat the; 66 ms: khong co detection tren frame nay
+[INFO] [1792291275.884347032] [yolo_detector]: 0 vat the; 65 ms: khong co detection tren frame nay
+[INFO] [1792291278.383891901] [yolo_detector]: 0 vat the; 79 ms: khong co detection tren frame nay
+[INFO] [1792291280.384313651] [yolo_detector]: 0 vat the; 55 ms: khong co detection tren frame nay
+[INFO] [1792291282.884139252] [yolo_detector]: 0 vat the; 65 ms: khong co detection tren frame nay
+[INFO] [1792291284.885010614] [yolo_detector]: 0 vat the; 76 ms: khong co detection tren frame nay
+[INFO] [1792291286.884334423] [yolo_detector]: 0 vat the; 52 ms: khong co detection tren frame nay
+[INFO] [1792291288.934277413] [yolo_detector]: 0 vat the; 92 ms: khong co detection tren frame nay
+[INFO] [1792291291.384068693] [yolo_detector]: 0 vat the; 81 ms: khong co detection tren frame nay
+[INFO] [1792291293.884294404] [yolo_detector]: 0 vat the; 61 ms: khong co detection tren frame nay
+[INFO] [1792291296.384193867] [yolo_detector]: 0 vat the; 45 ms: khong co detection tren frame nay
+[INFO] [1792291298.384445303] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291300.434240265] [yolo_detector]: 0 vat the; 96 ms: khong co detection tren frame nay
+[INFO] [1792291302.884112752] [yolo_detector]: 0 vat the; 60 ms: khong co detection tren frame nay
+[INFO] [1792291304.933796721] [yolo_detector]: 0 vat the; 83 ms: khong co detection tren frame nay
+[INFO] [1792291307.384444438] [yolo_detector]: 0 vat the; 60 ms: khong co detection tren frame nay
+[INFO] [1792291309.884228392] [yolo_detector]: 0 vat the; 62 ms: khong co detection tren frame nay
+[INFO] [1792291311.883873921] [yolo_detector]: 0 vat the; 68 ms: khong co detection tren frame nay
+[INFO] [1792291314.383827085] [yolo_detector]: 0 vat the; 52 ms: khong co detection tren frame nay
+[INFO] [1792291316.384261781] [yolo_detector]: 0 vat the; 36 ms: khong co detection tren frame nay
+[INFO] [1792291318.433973076] [yolo_detector]: 0 vat the; 104 ms: khong co detection tren frame nay
+[INFO] [1792291320.884040078] [yolo_detector]: 0 vat the; 53 ms: khong co detection tren frame nay
+[INFO] [1792291322.884130568] [yolo_detector]: 0 vat the; 55 ms: khong co detection tren frame nay
+[INFO] [1792291324.884684920] [yolo_detector]: 0 vat the; 47 ms: khong co detection tren frame nay
+[INFO] [1792291327.384185698] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291329.384455506] [yolo_detector]: 0 vat the; 56 ms: khong co detection tren frame nay
+[INFO] [1792291331.884265850] [yolo_detector]: 0 vat the; 58 ms: khong co detection tren frame nay
+[INFO] [1792291334.384253068] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291336.384285937] [yolo_detector]: 0 vat the; 41 ms: khong co detection tren frame nay
+[INFO] [1792291338.884316377] [yolo_detector]: 2 vat the; 42 ms: person conf=0.83 bbox=[139.2, 10.3, 167.8, 137.1]; skateboard conf=0.55 bbox=[266.8, 111.1, 299.1, 133.2]
+[INFO] [1792291341.384537671] [yolo_detector]: 1 vat the; 42 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291343.885088775] [yolo_detector]: 1 vat the; 63 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291346.134420390] [yolo_detector]: 1 vat the; 280 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291348.234586830] [yolo_detector]: 1 vat the; 404 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291350.684532372] [yolo_detector]: 1 vat the; 313 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291352.936137576] [yolo_detector]: 1 vat the; 45 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291355.433833953] [yolo_detector]: 1 vat the; 51 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291357.433957545] [yolo_detector]: 1 vat the; 62 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291359.534938548] [yolo_detector]: 1 vat the; 166 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291362.084670513] [yolo_detector]: 1 vat the; 194 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291364.534774984] [yolo_detector]: 1 vat the; 164 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291366.934692664] [yolo_detector]: 1 vat the; 55 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291369.434279211] [yolo_detector]: 1 vat the; 48 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291371.934293853] [yolo_detector]: 1 vat the; 43 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291373.934225276] [yolo_detector]: 1 vat the; 38 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291375.934397839] [yolo_detector]: 1 vat the; 36 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291378.435352652] [yolo_detector]: 1 vat the; 61 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291380.434077396] [yolo_detector]: 1 vat the; 39 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]
+[INFO] [1792291382.933901149] [yolo_detector]: 1 vat the; 44 ms: person conf=0.87 bbox=[23.1, 0.9, 56.9, 139.5]

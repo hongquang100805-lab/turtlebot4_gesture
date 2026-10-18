@@ -1,14 +1,16 @@
 """To chuc bon che do bang cac launch chinh thuc cua TurtleBot 4 Jazzy."""
 
 from pathlib import Path
+from shlex import quote
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDescription
 from launch.actions import LogInfo, OpaqueFunction, SetEnvironmentVariable, SetLaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import EnvironmentVariable, LaunchConfiguration
 from launch_ros.actions import Node, SetParameter
+from nav2_common.launch import RewrittenYaml
 
 from turtlebot4_slam_nav.map_utils import validate_map
 
@@ -39,6 +41,15 @@ def simulator_actions(context, world, model, engine):
         raise RuntimeError('Launch sim chinh thuc da thay doi; can kiem tra gz_sim include.')
     index = includes[0]
     gazebo = actions[index]
+    local_share = Path(get_package_share_directory('turtlebot4_slam_nav'))
+    world_file = world + '.sdf'
+    if world == 'depot':
+        world_file = str(local_share / 'worlds/depot_objects.sdf')
+    actions.insert(index, SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', [
+        EnvironmentVariable('GZ_SIM_RESOURCE_PATH', default_value=''),
+        ':', str(local_share / 'models'),
+    ]))
+    index += 1
     gui_engine = LaunchConfiguration('gui_render_engine').perform(context)
     gui = LaunchConfiguration('gazebo_gui').perform(context) == 'true'
     # Giu resource path, GUI plugin path va clock bridge cua launch chinh thuc.
@@ -46,7 +57,7 @@ def simulator_actions(context, world, model, engine):
     actions[index] = GroupAction([IncludeLaunchDescription(
         gazebo.launch_description_source,
         launch_arguments={'on_exit_shutdown': 'true', 'gz_args': [
-            world, '.sdf -r -v 3 --render-engine-server ', engine,
+            quote(world_file), ' -r -v 3 --render-engine-server ', engine,
             ' -s',
         ]}.items())])
     if gui:
@@ -94,8 +105,31 @@ def launch_mode(context, mode):
             'use_sim_time': 'true', 'namespace': '', 'sync': 'true',
         }))
     if map_path:
+        setting = LaunchConfiguration('auto_initial_pose').perform(context)
+        known_maps = [
+            Path.home() / 'tb4_ws/src/turtlebot4_slam_nav/maps/depot_02.yaml',
+            Path(get_package_share_directory('turtlebot4_slam_nav')) / 'maps/depot_02.yaml',
+        ]
+        known_start = (world == 'depot' and map_path.resolve() in
+                       [path.resolve() for path in known_maps] and all(
+                           float(LaunchConfiguration(key).perform(context)) == 0.0
+                           for key in ('x', 'y', 'yaw')))
+        automatic = setting == 'true' or (setting == 'auto' and known_start)
+        params = RewrittenYaml(
+            source_file=str(Path(get_package_share_directory('turtlebot4_navigation'))
+                            / 'config/localization.yaml'),
+            param_rewrites={
+                'amcl.ros__parameters.set_initial_pose': str(automatic).lower(),
+                **{f'amcl.ros__parameters.initial_pose.{key}': LaunchConfiguration(
+                    f'initial_pose_{key}') for key in ('x', 'y', 'yaw')},
+                'amcl.ros__parameters.initial_pose.z': '0.0',
+            }, convert_types=True)
+        actions.append(LogInfo(msg=(
+            f'AMCL automatic initial pose: {automatic}; '
+            'pose is in map coordinates (initial_pose_x/y/yaw).')))
         actions.append(include('turtlebot4_navigation', 'localization.launch.py', {
             'use_sim_time': 'true', 'namespace': '', 'map': str(map_path),
+            'params': params,
         }))
     if mode == 'navigation':
         actions.append(include('turtlebot4_navigation', 'nav2.launch.py', {
@@ -135,5 +169,12 @@ def make_launch(mode):
     if mode in ('localization', 'navigation'):
         args.append(DeclareLaunchArgument('map', default_value=default_map(),
                                           description='Duong dan YAML ban do da tao bang SLAM'))
+        args.append(DeclareLaunchArgument(
+            'auto_initial_pose', default_value='auto', choices=['auto', 'true', 'false'],
+            description='auto: tu dat pose cho depot_02 va spawn goc; true: luon tu dat'))
+        for key in ('x', 'y', 'yaw'):
+            args.append(DeclareLaunchArgument(
+                f'initial_pose_{key}', default_value='0.0',
+                description=f'AMCL initial pose {key} trong he map (yaw radian)'))
     return LaunchDescription(args + [OpaqueFunction(
         function=launch_mode, kwargs={'mode': mode})])

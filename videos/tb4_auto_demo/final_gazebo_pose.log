@@ -1,0 +1,10 @@
+
+Requesting state for world [depot]...
+
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="turtlebot4"]/joint[@name="wheel_drop_left_joint"]/physics/ode/provide_feedback:<data-string>:L2056]: XML Element[provide_feedback], child of element[ode], not defined in SDF. Copying[provide_feedback] as children of [ode].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="turtlebot4"]/joint[@name="wheel_drop_right_joint"]/physics/ode/provide_feedback:<data-string>:L2177]: XML Element[provide_feedback], child of element[ode], not defined in SDF. Copying[provide_feedback] as children of [ode].
+Model: [48]
+  - Name: turtlebot4
+  - Pose [ XYZ (m) ] [ RPY (rad) ]:
+    [-0.223389 2.051070 -0.004450]
+    [-0.000000 -0.004399 2.086450]

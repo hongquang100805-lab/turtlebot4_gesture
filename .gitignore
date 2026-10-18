@@ -9,3 +9,6 @@ __pycache__/
 *.swo
 *~
 *.tmp
+.venv-yolo/
+models/*.pt
+models/*.onnx

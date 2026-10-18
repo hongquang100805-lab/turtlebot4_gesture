@@ -1,425 +1,312 @@
-# Bài thực hành 04 – TurtleBot 4 Simulation, SLAM và Navigation
+# TurtleBot 4 — Localization, Navigation qua 6 goal và nhận diện YOLO
 
-**Ubuntu 24.04 · ROS 2 Jazzy · Gazebo Harmonic · Python hệ thống 3.12**.
-Workspace: `~/tb4_ws`. Package: `turtlebot4_slam_nav`.
-Dùng simulator, controller và cấu hình SLAM/AMCL/Nav2 chính thức của TurtleBot 4.
+Sử dụng bản đồ đã quét ở bài trước để định vị TurtleBot 4 trong Gazebo, chạy **node ROS 2 điều hướng tuần tự qua 6 goal**, đồng thời nhận diện vật thể từ camera bằng **YOLO11n**.
 
-## 0. Chuẩn bị terminal và build
+- Môi trường: **Ubuntu 24.04 · ROS 2 Jazzy · Gazebo Harmonic · Python 3.12**.
+- Workspace: `~/tb4_ws`; package: `turtlebot4_slam_nav`.
+- World: `depot`, đã tích hợp sẵn hai mô hình người, tự xuất hiện mỗi lần chạy.
+- Bản đồ: `src/turtlebot4_slam_nav/maps/depot_02.yaml` và `depot_02.pgm`.
+- Bộ goal: `src/turtlebot4_slam_nav/config/goals.yaml`.
+- Bài này dùng lại map, **không chạy SLAM**. Hướng dẫn bài mapping trước ở [README_LAB04.md](README_LAB04.md).
 
-Mở ba terminal:
+## 1. Chuẩn bị terminal
 
-| Terminal | Công việc | Khi nào giữ mở |
-|---|---|---|
-| A | Chạy launch của từng phần | Suốt phần đang thực hiện |
-| B | Undock và teleop | Khi kiểm tra chuyển động hoặc mapping |
-| C | Kiểm tra topic, TF, lưu map và theo dõi goal | Theo từng lệnh |
+Mở 4 terminal:
 
-**Trong mỗi terminal mới**, chạy:
+| Terminal | Công việc |
+|---|---|
+| A | Gazebo, AMCL, Nav2 và RViz |
+| B | Chạy node điều hướng qua 6 goal |
+| C | Chạy YOLO và hiển thị camera |
+| D | Kiểm tra topic, localization và undock |
 
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-```
-
-Nếu Conda đang active, `conda deactivate` trước. Script dùng Python hệ thống,
-source Jazzy và workspace của bài; không sửa `.bashrc`. Mọi terminal của bài
-phải source cùng script để dùng cùng ROS domain và Gazebo partition.
-
-**Terminal A — build một lần trước khi chạy:**
+**Chạy khối sau trong mỗi terminal mới:**
 
 ```bash
 cd ~/tb4_ws
-/usr/bin/python3 -m colcon build --symlink-install --packages-select turtlebot4_slam_nav
+export TB4_LAB_DOMAIN_ID=74
+source src/turtlebot4_slam_nav/scripts/env.sh
+export GZ_IP=127.0.0.1
+```
+
+Tất cả terminal phải dùng cùng domain. `env.sh` nạp ROS/workspace và cấu hình Gazebo partition tương ứng; không sửa `.bashrc`.
+
+### Build sau khi thay đổi mã nguồn
+
+```bash
+/usr/bin/python3 -m colcon build --symlink-install \
+  --packages-select turtlebot4_slam_nav
 source install/local_setup.bash
-ros2 pkg prefix turtlebot4_slam_nav
+ros2 pkg executables turtlebot4_slam_nav
+mkdir -p log/lab05_run
 ```
 
-**Chỉ chạy một chế độ tại một thời điểm.** Khi chuyển phần: ở B nhấn `k`, rồi
-`Ctrl+C` để thoát teleop; ở A nhấn `Ctrl+C`, chờ các tiến trình thoát rồi mới
-chạy launch tiếp theo. Đóng cửa sổ Gazebo không dừng server; phải dừng ở A.
+Cần thấy các executable `goal_recorder`, `navigate_goals` và `yolo_detector`.
 
-| Phần | Launch | RViz fixed frame |
-|---|---|---|
-| Simulation | `simulation.launch.py` | `odom` |
-| Mapping | `mapping.launch.py` | `map` |
-| Localization | `localization.launch.py` | `map` |
-| Navigation | `navigation.launch.py` | `map` |
+### Chuẩn bị YOLO — thực hiện một lần
 
-Các lệnh dưới đây dùng `world:=depot` và thử GUI `ogre2`, vì GUI `ogre` từng
-hiển thị cảnh trắng/đen trên máy này. Cả hai GUI engine từng crash; xem mục 6.
-Sensor giữ mặc định `sensor_render_engine:=ogre2`.
-
-## 1. Simulation — kiểm tra robot và các topic cơ bản
-
-### 1.1. Khởi chạy — terminal A
+Nếu đã có `.venv-yolo` và `models/yolo11n.pt` thì bỏ qua bước này.
 
 ```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 launch turtlebot4_slam_nav simulation.launch.py \
-  world:=depot gui_render_engine:=ogre2
+bash src/turtlebot4_slam_nav/scripts/setup_yolo.sh
 ```
 
-Giữ A mở. Chờ world tải xong và robot xuất hiện. Gazebo phải đang **Play**.
-RViz dùng fixed frame `odom`; chưa có Map ở chế độ này.
+Script tạo môi trường Python riêng và chuẩn bị weights. Khi chạy detector, dùng `.venv-yolo/bin/python` như mục 4 để lấy đúng thư viện YOLO và `cv_bridge`.
 
-**Terminal C — kiểm tra mô phỏng đang chạy:**
+## 2. Terminal A — khởi chạy Gazebo, map, AMCL và Nav2
+
+Dừng launch cũ bằng `Ctrl+C` trước khi mở phiên mới.
 
 ```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 node list --no-daemon --spin-time 5
-ros2 topic list --no-daemon --spin-time 5
-ros2 topic echo /clock rosgraph_msgs/msg/Clock --once
+ros2 launch turtlebot4_slam_nav navigation.launch.py \
+  world:=depot gui_render_engine:=ogre2 \
+  map:="$HOME/tb4_ws/src/turtlebot4_slam_nav/maps/depot_02.yaml"
 ```
 
-Cần thấy các node của robot và `/clock` có thời gian mô phỏng. Chạy các lệnh
-kiểm tra dưới đây lần lượt; lệnh chạy liên tục thì `Ctrl+C` trước lệnh tiếp theo.
+Giữ terminal A mở, chờ robot và bản đồ xuất hiện. Gazebo phải ở trạng thái **Play**.
 
-### 1.2. Kiểm tra LiDAR `/scan` — terminal C
+- Launch này bật cả AMCL, Nav2 và RViz.
+- Với `depot_02.yaml` và spawn mặc định, **AMCL tự khởi tạo pose `(0, 0, 0)` trong hệ map**; không cần chọn lại `2D Pose Estimate` mỗi lần.
+- Hai người đã được thêm trong `worlds/depot_objects.sdf`, không cần chạy lệnh spawn riêng.
+- Người xuất hiện trong Gazebo/camera; ảnh bản đồ tĩnh cũ không tự cập nhật hình người.
+
+Nếu GUI Gazebo gây tải cao hoặc crash, dừng phiên cũ rồi chạy chỉ server, vẫn giữ RViz:
+
+```bash
+ros2 launch turtlebot4_slam_nav navigation.launch.py \
+  world:=depot gazebo_gui:=false \
+  map:="$HOME/tb4_ws/src/turtlebot4_slam_nav/maps/depot_02.yaml"
+```
+
+Nếu đổi bản đồ hoặc vị trí spawn, phải xác định lại initial pose theo hệ map. Có thể đặt thủ công bằng `2D Pose Estimate`, hoặc truyền `auto_initial_pose:=true` cùng các tham số `initial_pose_x`, `initial_pose_y`, `initial_pose_yaw` đã kiểm chứng.
+
+## 3. Terminal D — kiểm tra robot, localization và undock
+
+Chạy các lệnh kiểm tra liên tục lần lượt; dùng `Ctrl+C` để dừng trước lệnh kế tiếp.
+
+### LiDAR `/scan`
 
 ```bash
 ros2 topic info /scan -v
 ros2 topic echo /scan sensor_msgs/msg/LaserScan \
   --once --field header --qos-reliability best_effort
-ros2 topic echo /scan sensor_msgs/msg/LaserScan \
-  --once --field ranges --qos-reliability best_effort
 ros2 topic hz /scan
 ```
 
-**Kết quả cần thấy:**
+Cần có publisher, timestamp/frame LiDAR và dữ liệu được cập nhật.
 
-- Kiểu message `sensor_msgs/msg/LaserScan`, có publisher.
-- Header có timestamp và frame LiDAR. Robot standard đang dùng frame
-  `turtlebot4/rplidar_link/rplidar`.
-- `ranges` có khoảng cách đến vật cản; các mẫu không đồng loạt cố định `0.164`.
-  Một số giá trị `inf` có thể là tia không gặp vật cản trong tầm đo.
-- `hz` báo tốc độ nhận message lớn hơn 0. Nhấn `Ctrl+C` để dừng.
-
-### 1.3. Kiểm tra odometry `/odom` — terminal C
+### Odometry `/odom`
 
 ```bash
 ros2 topic info /odom -v
-ros2 topic echo /odom nav_msgs/msg/Odometry --once --field header
-ros2 topic echo /odom nav_msgs/msg/Odometry --field pose.pose
-```
-
-**Kết quả cần thấy:** kiểu `nav_msgs/msg/Odometry`, có publisher, frame `odom`.
-Giữ lệnh cuối chạy khi điều khiển ở bước 1.4: vị trí/hướng phải thay đổi khi
-robot di chuyển. Nhấn `Ctrl+C` trước khi kiểm tra topic khác.
-
-Có thể kiểm tra thêm tần số:
-
-```bash
+ros2 topic echo /odom nav_msgs/msg/Odometry --once --field pose.pose
 ros2 topic hz /odom
 ```
 
-### 1.4. Kiểm tra robot nhận `/cmd_vel` — terminal B và C
+Pose phải thay đổi khi robot di chuyển. Odometry không phải pose toàn cục đã hiệu chỉnh trên map.
 
-**B — kiểm tra dock:**
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 topic echo /dock_status irobot_create_msgs/msg/DockStatus --once
-```
-
-Nếu `is_docked: true`, undock và chờ action thành công:
-
-```bash
-ros2 action send_goal /undock irobot_create_msgs/action/Undock '{}' --feedback
-ros2 topic echo /dock_status irobot_create_msgs/msg/DockStatus --once
-```
-
-Cần `is_docked: false` trước khi lái. Nếu action báo `Robot already undocked`,
-kiểm tra lại dock status; nếu đã false thì tiếp tục.
-
-**B — mở teleop, giữ terminal này mở:**
-
-```bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args \
-  -p stamped:=true -p use_sim_time:=true -p frame_id:=base_link \
-  -p speed:=0.30 -p turn:=1.0
-```
-
-**C — đọc lệnh vận tốc, rồi chuyển focus sang B để nhấn phím:**
+### Lệnh vận tốc `/cmd_vel`
 
 ```bash
 ros2 topic info /cmd_vel -v
-ros2 topic echo /cmd_vel geometry_msgs/msg/TwistStamped \
-  --qos-reliability best_effort
+ros2 topic type /cmd_vel
 ```
 
-Trong **B**: `i` tiến, `,` lùi, `j/l` quay, `k` dừng. Nhấn/giữ phím để cập nhật
-lệnh vận tốc. `w/x` tăng/giảm tốc tiến/lùi 10%, `e/c` tăng/giảm tốc quay 10%.
-
-**Kết quả cần thấy:**
-
-- `/cmd_vel` là **`geometry_msgs/msg/TwistStamped`**, có subscriber `motion_control`.
-- Nhấn `i`: lệnh có `twist.linear.x` dương; nhấn `j/l`: `twist.angular.z` khác 0;
-  nhấn `k`: các thành phần vận tốc trở về 0.
-- Robot di chuyển trong Gazebo và odometry thay đổi như bước 1.3.
-
-Có dữ liệu trên `/cmd_vel` mới chứng minh lệnh được publish; phải kiểm tra cả
-chuyển động và odometry để xác nhận robot nhận lệnh. Dùng `stamped:=true`,
-không publish Twist thường hoặc remap trực tiếp vào controller.
-
-### 1.5. Kiểm tra robot và LiDAR trên RViz
-
-Trong RViz: **Fixed Frame = `odom`**, bật **RobotModel** và **LaserScan**.
-LaserScan dùng topic `/scan`, Reliability **Best Effort**, Durability **Volatile**.
-Cần thấy robot và các điểm LiDAR quanh vật cản.
-
-**C — kiểm tra TF, chạy từng lệnh và `Ctrl+C` trước lệnh kế tiếp:**
+Trong cấu hình này, `/cmd_vel` dùng `geometry_msgs/msg/TwistStamped`. Khi node navigation đang điều khiển robot, có thể quan sát một message:
 
 ```bash
-ros2 run tf2_ros tf2_echo odom base_link --ros-args -p use_sim_time:=true
-ros2 run tf2_ros tf2_echo base_link turtlebot4/rplidar_link/rplidar \
+ros2 topic echo /cmd_vel geometry_msgs/msg/TwistStamped \
+  --once --qos-reliability best_effort
+```
+
+Nếu robot đang đứng yên và chưa có lệnh, `echo --once` có thể phải chờ. Không gửi lệnh vận tốc thủ công trong chuỗi navigation.
+
+### Kiểm tra AMCL và Nav2
+
+```bash
+ros2 lifecycle get /amcl
+ros2 lifecycle get /bt_navigator
+ros2 topic echo /amcl_pose \
+  --once --qos-durability transient_local
+ros2 run tf2_ros tf2_echo map base_link \
   --ros-args -p use_sim_time:=true
 ```
 
-**Phần 1 đạt khi:** robot xuất hiện, `/scan` và `/odom` có dữ liệu, teleop làm
-robot di chuyển, RViz hiển thị robot/LiDAR và TF có dữ liệu.
+Hai lifecycle node cần ở trạng thái `active`. Trong RViz, đặt **Fixed Frame = map**, kiểm tra vị trí/hướng robot và điểm LiDAR khớp với tường trên bản đồ. Dừng lệnh `tf2_echo` bằng `Ctrl+C` sau khi kiểm tra.
 
-## 2. SLAM Toolbox — khảo sát và lưu bản đồ
-
-### 2.1. Chạy mapping — terminal A
-
-Dừng teleop và simulation cũ trước, rồi chạy:
+### Cho robot rời dock trước hành trình
 
 ```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 launch turtlebot4_slam_nav mapping.launch.py \
-  world:=depot gui_render_engine:=ogre2
-```
-
-Giữ A mở. Launch này bật SLAM Toolbox; không bật AMCL hoặc Nav2.
-
-### 2.2. Undock và khảo sát — terminal B
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
 ros2 topic echo /dock_status irobot_create_msgs/msg/DockStatus --once
 ```
 
-Nếu đang dock, chạy:
+Nếu `is_docked: true`, chạy:
 
 ```bash
-ros2 action send_goal /undock irobot_create_msgs/action/Undock '{}' --feedback
+ros2 action send_goal /undock \
+  irobot_create_msgs/action/Undock '{}' --feedback
 ```
 
-Sau khi undock, mở teleop:
+Chờ action `SUCCEEDED` và kiểm tra lại `is_docked: false`. Nếu đã undocked thì không cần gửi lại action.
+
+## 4. Terminal C — chạy camera YOLO
+
+Khởi chạy YOLO **trước node điều hướng**, giữ cửa sổ camera mở trong suốt hành trình:
 
 ```bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args \
-  -p stamped:=true -p use_sim_time:=true -p frame_id:=base_link \
-  -p speed:=0.30 -p turn:=1.0
+mkdir -p log/lab05_run
+export YOLO_CONFIG_DIR="$HOME/tb4_ws/log/ultralytics"
+
+./.venv-yolo/bin/python -m turtlebot4_slam_nav.yolo_detector --ros-args \
+  -p use_sim_time:=true \
+  -p model_path:="$HOME/tb4_ws/models/yolo11n.pt" \
+  -p image_topic:=/oakd/rgb/preview/image_raw \
+  -p confidence:=0.25 -p image_size:=416 \
+  -p max_fps:=2.0 -p cpu_threads:=2 \
+  -p device:=cpu -p show_window:=true \
+  2>&1 | tee log/lab05_run/yolo.log
 ```
 
-Khảo sát phần lớn khu vực có thể di chuyển: các hành lang, lối đi và vùng quanh
-vật cản. Giảm tốc bằng `x/c` ở chỗ hẹp; quay để quét tường, trở lại vùng đã đi
-để đóng vòng. Theo dõi Map cập nhật trên RViz, fixed frame `map`.
-Trước khi lưu, kiểm tra tường không bị nhân đôi và các vùng không lệch rõ rệt.
+Camera hiển thị bounding box, tên lớp và confidence khi phát hiện được đối tượng. Không có detection ở một số góc nhìn là tình huống cần đối chiếu ảnh thực tế, không tự kết luận node bị lỗi.
 
-### 2.3. Kiểm tra SLAM và lưu map — terminal C
-
-Giữ mapping ở A đang chạy. Nhấn `k` ở B để robot đứng yên, rồi ở C:
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 lifecycle get /slam_toolbox
-ros2 topic echo /map nav_msgs/msg/OccupancyGrid \
-  --once --field info --qos-durability transient_local
-ros2 run tf2_ros tf2_echo map odom --ros-args -p use_sim_time:=true
-```
-
-SLAM phải `active`, `/map` có kích thước/resolution và TF `map → odom` có dữ liệu.
-Dừng `tf2_echo` bằng `Ctrl+C`, sau đó lưu:
-
-```bash
-ros2 run turtlebot4_slam_nav save_map.sh
-ls -lh ~/tb4_ws/src/turtlebot4_slam_nav/maps/map.{yaml,pgm}
-cat ~/tb4_ws/src/turtlebot4_slam_nav/maps/map.yaml
-```
-
-Cần có **`map.yaml` và `map.pgm`**, với `image: map.pgm` trong YAML.
-Script báo lỗi nếu chưa có map và từ chối ghi đè map cũ. Muốn lưu tên khác:
-
-```bash
-ros2 run turtlebot4_slam_nav save_map.sh "$HOME/tb4_ws/src/turtlebot4_slam_nav/maps/depot_02"
-```
-
-Sau khi lưu thành công, thoát teleop ở B và dừng mapping ở A bằng `Ctrl+C`.
-
-## 3. Localization — load map và đặt vị trí robot
-
-### 3.1. Khởi động lại cùng world — terminal A
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 launch turtlebot4_slam_nav localization.launch.py \
-  world:=depot gui_render_engine:=ogre2 \
-  map:="$HOME/tb4_ws/src/turtlebot4_slam_nav/maps/depot_02.yaml"
-```
-
-Giữ A mở. Launch này bật map server + AMCL, tắt SLAM và chưa chạy Nav2.
-
-**B — kiểm tra dock và undock như bước 1.4.** Sau đó trong RViz:
-
-1. Chọn **2D Pose Estimate**.
-2. Nhấn tại **vị trí hiện tại của robot trên map**, kéo mũi tên đúng hướng robot.
-3. Chờ các điểm LiDAR khớp với tường trên bản đồ; đối chiếu robot trong Gazebo.
-
-Tọa độ Gazebo và bản đồ SLAM có thể khác nhau. Sau undock, robot đã rời vị trí
-spawn; chọn pose theo vị trí hiện tại. **2D Pose Estimate không phải lệnh đi đến đích.**
-
-### 3.2. Kiểm tra localization — terminal C
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 lifecycle get /map_server
-ros2 lifecycle get /amcl
-ros2 topic echo /amcl_pose geometry_msgs/msg/PoseWithCovarianceStamped --once
-ros2 run tf2_ros tf2_echo map base_link --ros-args -p use_sim_time:=true
-```
-
-Cần map server/AMCL `active`, có `/amcl_pose`, có TF và LiDAR khớp map.
-Nếu chưa khớp, đặt lại **2D Pose Estimate** đúng vị trí/hướng.
-Dừng `tf2_echo` bằng `Ctrl+C`. Dừng localization ở A trước khi chuyển phần 4.
-
-## 4. Nav2 — thực hiện 3 goal ở các vùng khác nhau
-
-### 4.1. Chạy navigation — terminal A
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 launch turtlebot4_slam_nav navigation.launch.py \
-  world:=depot gui_render_engine:=ogre2 \
-  map:="$HOME/tb4_ws/src/turtlebot4_slam_nav/maps/depot_02.yaml"
-```
-
-Giữ A mở. Launch này bật map server + AMCL + Nav2; tắt SLAM.
-**Phải chạy `navigation.launch.py`; `localization.launch.py` chưa có Nav2.**
-
-Robot mới: ở B kiểm tra dock, undock theo bước 1.4; trong RViz đặt lại
-**2D Pose Estimate** theo phần 3. Nếu còn teleop đang mở, nhấn `k`, rồi `Ctrl+C`.
-
-**C — kiểm tra trước khi gửi goal:**
-
-```bash
-source ~/tb4_ws/src/turtlebot4_slam_nav/scripts/env.sh
-ros2 lifecycle get /controller_server
-ros2 lifecycle get /bt_navigator
-ros2 lifecycle get /collision_monitor
-ros2 action info /navigate_to_pose
-```
-
-Các node phải `active`, action phải có server. Nếu Nav2 còn chờ transform,
-kiểm tra initial pose và TF `map → base_link` như bước 3.2.
-
-### 4.2. Đặt goal trong RViz và theo dõi kết quả
-
-**C — giữ lệnh theo dõi chạy:**
-
-```bash
-ros2 topic echo /navigate_to_pose/_action/status action_msgs/msg/GoalStatusArray
-```
-
-Trong RViz:
-
-1. Chọn **Nav2 Goal**, nhấn vào vùng trống đã được map và kéo hướng đích.
-2. Quan sát robot tự lập kế hoạch và di chuyển, path/costmap cập nhật.
-3. Chờ robot đến đích, không va chạm và goal báo **`SUCCEEDED`** (`status: 4`).
-4. Gửi goal thứ hai rồi thứ ba, tại các vùng khác nhau; chờ từng goal hoàn thành.
-
-**Sau khi gửi goal không điều khiển robot thủ công.** Không cần đặt lại initial
-pose giữa các goal nếu localization vẫn đúng. `status: 6` là `ABORTED`, không
-được tính là thành công. Khi có nhiều goal UUID trong status, theo dõi UUID
-của goal vừa gửi, không dùng status của goal cũ để kết luận.
-
-| Goal | Khu vực đích | Kết quả | Mốc thời gian video |
-|---|---|---|---|
-| 1 | Tự bổ sung | | |
-| 2 | Tự bổ sung | | |
-| 3 | Tự bổ sung | | |
-
-## 5. Đổi world hoặc dùng map khác
-
-Đổi `world:=depot` thành `world:=maze` hoặc `world:=warehouse` trong các launch.
-**Mapping, localization và navigation phải cùng world, model và pose spawn.**
-Các argument spawn: `model`, `x`, `y`, `z`, `yaw`; giữ giống nhau giữa các phần.
-
-Truyền đường dẫn YAML của map đã tạo; nếu lưu `depot_02`, dùng:
-
-```bash
-ros2 launch turtlebot4_slam_nav navigation.launch.py \
-  world:=depot gui_render_engine:=ogre2 \
-  map:="$HOME/tb4_ws/src/turtlebot4_slam_nav/maps/depot_02.yaml"
-```
-
-Dừng phiên cũ trước lệnh trên. Khi di chuyển map, chuyển cả YAML và ảnh mà YAML
-tham chiếu. Không cần build lại nếu dùng trực tiếp đường dẫn map trong source.
-Muốn map mới được cài vào `install/` để phân phối, build lại:
-
-```bash
-cd ~/tb4_ws
-/usr/bin/python3 -m colcon build --symlink-install --packages-select turtlebot4_slam_nav
-source install/local_setup.bash
-ls "$(ros2 pkg prefix --share turtlebot4_slam_nav)/maps"
-```
-
-Nếu bỏ argument `map`, wrapper ưu tiên `maps/map.yaml` trong source rồi mới
-đến map đã cài. Chưa có map hợp lệ thì localization/navigation báo lỗi trước
-khi bật simulator; hãy mapping và lưu map trước.
-
-## 6. Kiểm tra nhanh khi gặp lỗi
-
-| Hiện tượng | Bước kiểm tra |
+| Topic đầu ra | Nội dung |
 |---|---|
-| Không có dữ liệu topic | Chờ world tải xong, Gazebo đang Play; source cùng `env.sh` ở mọi terminal; đọc `/clock` ở bước 1.1. |
-| Robot không chạy dù `/cmd_vel` có dữ liệu | Kiểm tra dock, dùng TwistStamped, focus đúng terminal B; kiểm tra `/odom` khi nhấn phím. |
-| Robot chạy chậm | Teleop đang đặt 0.30 m/s; dùng `w/x` điều chỉnh. Xem Real Time Factor trong Gazebo: mô phỏng chậm hơn thời gian thực cũng làm chuyển động nhìn chậm. |
-| LiDAR không hiện | Kiểm tra `/scan`, QoS Best Effort và TF ở bước 1.5. |
-| Scan toàn `0.164`, map rất nhỏ | Giữ `sensor_render_engine:=ogre2`; không dùng map lỗi đó để navigation. |
-| `Please set the initial pose` | Dùng 2D Pose Estimate đúng vị trí/hướng hiện tại; kiểm tra `/amcl_pose` và TF ở bước 3.2. |
-| `queue is full` trước initial pose | Đặt initial pose để có TF từ map tới robot; kiểm tra dữ liệu mới sau đó, không chỉ đọc lại cảnh báo cũ. |
-| Có `initialPoseReceived` rồi `Setting pose`, nhưng cảnh báo extrapolation vài ms | AMCL vẫn nhận pose; kiểm tra `/amcl_pose`, TF và LiDAR khớp map trước khi gửi goal. |
-| Không có Nav2 Goal hoặc action server | Kiểm tra đang chạy `navigation.launch.py`, không phải `localization.launch.py`. |
-| Map không load | Kiểm tra YAML/PGM tồn tại và trường `image`; chạy `ros2 lifecycle get /map_server`. |
-| `Node not found` dù đã khởi chạy | Thử `ros2 node list --no-daemon --spin-time 5`; các terminal phải cùng domain/profile từ `env.sh`. |
-| `GLIBC_PRIVATE` từ VS Code Snap | Source `env.sh` trong terminal của bài để làm sạch biến GUI. |
-| GUI Gazebo trắng/đen hoặc crash | Thử `gui_render_engine:=ogre2`; nếu vẫn crash, dùng `gazebo_gui:=false` như lệnh dưới. |
+| `/yolo/annotated_image` | Ảnh đã vẽ box, nhãn và confidence |
+| `/yolo/detections` | JSON chứa timestamp, frame, thời gian xử lý và các detection |
 
-Ví dụ chạy server và RViz khi GUI Gazebo lỗi, **sau khi dừng phiên cũ**:
+Terminal D có thể theo dõi:
 
 ```bash
-ros2 launch turtlebot4_slam_nav simulation.launch.py world:=depot gazebo_gui:=false
+ros2 topic echo /yolo/detections std_msgs/msg/String
+ros2 topic hz /yolo/annotated_image
 ```
 
-Thêm `gazebo_gui:=false` vào lệnh mapping/localization/navigation cũng được.
-GUI và server chạy riêng; lỗi GUI không tự dừng server. Cách này kiểm tra được
-dữ liệu và thao tác RViz, nhưng phần quan sát robot trong Gazebo để nghiệm thu
-vẫn cần GUI hiển thị đúng. Chi tiết lỗi môi trường xem [VALIDATION.md](VALIDATION.md).
+Để xem ảnh trên RViz: **Add → Image → `/yolo/annotated_image`**, chọn Reliability **Best Effort**.
 
-Lần đầu Depot tải từ Gazebo Fuel có thể mất vài phút. Nếu tải/spawn timeout,
-dừng launch ở A; trong terminal đã source `env.sh`, tải model rồi chạy lại:
+YOLO phục vụ nhận diện/hiển thị. Tránh vật cản vẫn do Nav2 và dữ liệu cảm biến đảm nhiệm; chương trình chưa dùng nhãn YOLO để điều khiển robot.
+
+## 5. Terminal B — chạy tự động qua 6 goal
+
+Bộ tọa độ hiện tại trong hệ `map`:
+
+| Goal | x (m) | y (m) | yaw (rad) |
+|---|---:|---:|---:|
+| 1 | -2.731 | -2.663 | 0.000 |
+| 2 | -2.935 | 2.572 | 0.000 |
+| 3 | -6.649 | -0.159 | 0.000 |
+| 4 | 4.208 | 3.912 | 0.000 |
+| 5 | 8.017 | 1.366 | 0.000 |
+| 6 | -6.360 | 3.465 | 0.000 |
+
+Bảng làm tròn để dễ đọc; chương trình dùng tọa độ đầy đủ trong YAML.
 
 ```bash
-gz fuel download -u https://fuel.gazebosim.org/1.0/OpenRobotics/models/Depot
+mkdir -p log/lab05_run
+
+ros2 run turtlebot4_slam_nav navigate_goals --ros-args \
+  -p use_sim_time:=true \
+  -p goals_file:="$HOME/tb4_ws/src/turtlebot4_slam_nav/config/goals.yaml" \
+  -p results_file:="$HOME/tb4_ws/log/lab05_run/results.json" \
+  -p pause_at_goal:=8.0 \
+  2>&1 | tee log/lab05_run/navigation.log
 ```
 
-## 7. Dependency nếu máy chưa cài
+Node gửi một action `/navigate_to_pose` tại mỗi thời điểm, chờ `SUCCEEDED` rồi mới gửi goal tiếp theo. Nếu goal lỗi, bị từ chối hoặc timeout, chương trình dừng chuỗi và lưu trạng thái.
 
-Các gói đã có trên máy khi triển khai. Chỉ cài nếu còn thiếu:
+**Sau khi node bắt đầu: không teleop, không dùng Nav2 Goal bằng chuột và không đặt lại initial pose.** RViz dùng để quan sát robot, đường đi và costmap.
+
+### Kiểm tra kết quả
 
 ```bash
-sudo apt update
-sudo apt install ros-jazzy-turtlebot4-simulator ros-jazzy-irobot-create-nodes \
-  ros-jazzy-turtlebot4-navigation ros-jazzy-nav2-bringup ros-jazzy-slam-toolbox \
-  ros-jazzy-rviz2 ros-jazzy-teleop-twist-keyboard ros-jazzy-tf2-ros \
-  ros-jazzy-rmw-fastrtps-cpp python3-colcon-common-extensions python3-yaml
+cat log/lab05_run/results.json
 ```
 
-Gazebo dùng Harmonic (gz-sim 8); xem [cài Harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/)
-nếu máy chưa có. Không cần build simulator từ source.
+Lần chạy hoàn tất khi trạng thái chung là `SUCCEEDED` và cả 6 mục trong `goals` đều `SUCCEEDED`.
 
-re/turtlebot4_simulator.html),
-[source nhánh jazzy](https://github.com/turtlebot/turtlebot4_simulator/tree/jazzy),
-[tạo map](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/generate_map.html),
-[navigation](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/navigation.html).
+Để lưu nhiều lần thực nghiệm, đổi đường dẫn `results_file` và file log trước lần chạy tiếp theo. Các lệnh `tee` ở trên ghi lại các file của lần chạy hiện tại trong `log/lab05_run/`.
+
+## 6. Ghi bộ goal mới — chỉ thực hiện trước hành trình
+
+Nếu muốn dùng 6 goal hiện có, bỏ qua mục này. Để khảo sát bộ mới, ghi sang file khác:
+
+```bash
+ros2 run turtlebot4_slam_nav goal_recorder --ros-args \
+  -p use_sim_time:=true \
+  -p output_file:="$HOME/tb4_ws/log/goals_new.yaml" \
+  -p yaw:=0.0
+```
+
+Trên RViz chọn **Publish Point**, Fixed Frame là `map`, click các điểm trong vùng có thể di chuyển. Publish Point chỉ có x/y; recorder dùng yaw từ tham số. Có thể đổi yaw cho điểm tiếp theo:
+
+```bash
+ros2 param set /goal_recorder yaw 1.57079632679
+```
+
+Nếu muốn ghi pose AMCL hiện tại, giữ recorder mở và gọi:
+
+```bash
+ros2 service call /record_current_pose std_srvs/srv/Trigger '{}'
+```
+
+Ghi xong thì `Ctrl+C` recorder. Khi chạy node điều hướng, truyền `goals_file` sang đúng file mới. Không chạy recorder hoặc khảo sát bằng tay trong hành trình tự động.
+
+## 7. Cấu trúc mã nguồn chính
+
+| Tệp / thư mục trong package | Chức năng |
+|---|---|
+| `launch/navigation.launch.py` | Mở mô phỏng, map, AMCL, Nav2 và RViz |
+| `turtlebot4_slam_nav/launch_helpers.py` | Ghép các launch, chọn world và initial pose |
+| `turtlebot4_slam_nav/goal_recorder.py` | Ghi tọa độ trước khi chạy |
+| `turtlebot4_slam_nav/navigate_goals.py` | Gửi goal tuần tự, theo dõi và lưu kết quả |
+| `turtlebot4_slam_nav/yolo_detector.py` | Camera → cv_bridge → YOLO → ảnh/JSON |
+| `turtlebot4_slam_nav/goal_utils.py` | Đọc, kiểm tra và lưu goal YAML |
+| `turtlebot4_slam_nav/map_utils.py` | Kiểm tra bản đồ trước khi nạp |
+| `config/goals.yaml` | Sáu tọa độ mục tiêu |
+| `maps/depot_02.yaml`, `maps/depot_02.pgm` | Bản đồ từ bài trước |
+| `worlds/depot_objects.sdf` | World depot có sẵn hai người |
+| `models/tb4_demo_person/` | Model người cùng mesh/texture |
+| `scripts/env.sh` | Nạp ROS/workspace và cấu hình liên lạc |
+| `scripts/setup_yolo.sh` | Chuẩn bị môi trường inference |
+| `setup.py`, `package.xml` | Đóng gói node và khai báo phụ thuộc |
+
+## 8. Video, ảnh và báo cáo đã thực hiện
+
+Lần chạy ngày 18/10/2026 đã hoàn thành **6/6 goal**; dữ liệu được giữ riêng, không bị các lệnh ở trên ghi đè:
+
+- [Video 6 goal](videos/tb4_6goals_demo_2026-10-18/TurtleBot4_6Goals_Nav2_YOLO.webm).
+- [Kết quả action thực tế](videos/tb4_6goals_demo_2026-10-18/results.json).
+- [Ảnh minh chứng và dữ liệu báo cáo](videos/tb4_6goals_demo_2026-10-18/Anh_bao_cao_6_goal.zip).
+- [Phân tích YOLO theo mẫu log và ảnh đối chiếu](videos/tb4_6goals_demo_2026-10-18/yolo_evaluation/PHAN_TICH_YOLO.md).
+
+Phần thống kê YOLO dùng **160 mẫu log, 94 box thuộc 9 lớp** trong chuỗi 6 goal. Log terminal chỉ in khoảng mỗi 2 giây, nên không dùng số box này làm tổng mọi ảnh hoặc số vật thể duy nhất. Đánh giá đúng/sai trong báo cáo dựa trên ảnh đã đối chiếu; chưa có ground truth để tính precision/recall/mAP.
+
+## 9. Dừng chương trình
+
+1. `Ctrl+C` terminal B; node yêu cầu hủy action nếu robot còn đang thực hiện goal.
+2. `Ctrl+C` terminal C để dừng YOLO.
+3. Dừng các lệnh kiểm tra còn chạy ở D.
+4. `Ctrl+C` terminal A và chờ launch thoát.
+
+Đóng cửa sổ Gazebo không đồng nghĩa đã dừng simulator server. Chỉ khởi chạy phiên tiếp theo sau khi dừng launch cũ.
+
+## 10. Xử lý nhanh các tình huống thường gặp
+
+| Hiện tượng | Kiểm tra / cách xử lý |
+|---|---|
+| Không thấy node/topic | Nạp cùng `env.sh`, domain và `GZ_IP` trong mọi terminal; kiểm tra A còn chạy |
+| AMCL báo chưa có initial pose | Kiểm tra đúng `depot_02.yaml`, spawn mặc định và `auto_initial_pose`; nếu đã đổi map/spawn thì đặt pose tương ứng |
+| RViz báo queue đầy | Kiểm tra clock, Play, pose AMCL, TF và QoS LaserScan; xem trạng thái dữ liệu mới sau khởi tạo |
+| Không có ảnh camera | Kiểm tra `/oakd/rgb/preview/image_raw`, robot standard, Play và QoS sensor |
+| Không import được ultralytics | Chạy detector bằng `.venv-yolo/bin/python` và kiểm tra bước setup |
+| Gazebo trắng/đen hoặc GUI crash | Dùng `gui_render_engine:=ogre2`; nếu cần chạy `gazebo_gui:=false` với RViz |
+| Robot không rời dock | Kiểm tra `/dock_status`, thực hiện `/undock` trước chuỗi goal |
+| YAML có điểm sai | Ghi/sửa trước hành trình; điểm thuộc frame map, nằm trong vùng trống và đủ khoảng hở |
+| YOLO nhận sai thùng/cột | Đối chiếu ảnh và ghi nhận sai số; confidence hoặc số lần lặp lại không tự chứng minh nhãn đúng |
+
+## Tài liệu tham khảo
+
+- [TurtleBot 4 Navigator](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/turtlebot4_navigator.html).
+- [Nav2 Simple Commander API — Jazzy](https://docs.nav2.org/jazzy/configuration_and_development/simple_commander_api/simple_commander_api/).
+- [Ultralytics Predict](https://docs.ultralytics.com/modes/predict/).
+
+Đề cho phép dùng Simple Commander hoặc action trực tiếp; chương trình của bài này sử dụng ROS 2 ActionClient `/navigate_to_pose`.

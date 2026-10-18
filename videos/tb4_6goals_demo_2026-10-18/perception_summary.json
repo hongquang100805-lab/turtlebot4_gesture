@@ -1,0 +1,20 @@
+{
+  "frames": 1013,
+  "detection_frames": 418,
+  "classes": {
+    "person": 0.9171,
+    "chair": 0.4218,
+    "suitcase": 0.8667,
+    "umbrella": 0.6378,
+    "airplane": 0.7594,
+    "parking meter": 0.4038,
+    "skateboard": 0.5478,
+    "bench": 0.3488,
+    "fire hydrant": 0.2793,
+    "refrigerator": 0.325,
+    "bottle": 0.358,
+    "cup": 0.4805,
+    "tv": 0.295,
+    "traffic light": 0.3498
+  }
+}

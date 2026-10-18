@@ -1,0 +1,12 @@
+[
+  {
+    "event": "gazebo_environment",
+    "wall_time": 1792290880.613711,
+    "decoded_frames": 172
+  },
+  {
+    "event": "localization_rviz",
+    "wall_time": 1792290897.1909237,
+    "decoded_frames": 207
+  }
+]

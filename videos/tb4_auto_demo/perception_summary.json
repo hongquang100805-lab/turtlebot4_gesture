@@ -1,0 +1,13 @@
+{
+  "frames": 2770,
+  "detection_frames": 2592,
+  "classes": {
+    "person": 0.8995,
+    "chair": 0.3523,
+    "suitcase": 0.7901,
+    "sports ball": 0.3299,
+    "bird": 0.2862,
+    "bench": 0.4082,
+    "umbrella": 0.2695
+  }
+}

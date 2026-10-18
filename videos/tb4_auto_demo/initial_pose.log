@@ -1,0 +1,1 @@
+geometry_msgs.msg.Pose(position=geometry_msgs.msg.Point(x=0.014321773157120077, y=-0.027158596316580512, z=0.0), orientation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=-0.004660070486700003, w=0.9999891418125794))

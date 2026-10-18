@@ -4,6 +4,16 @@
 Workspace: `~/tb4_ws`. Package: `turtlebot4_slam_nav`.
 Dùng simulator, controller và cấu hình SLAM/AMCL/Nav2 chính thức của TurtleBot 4.
 
+**Bài tiếp theo — điều hướng 3 goal bằng code và nhận diện camera YOLO:**
+xem [LAB05_NAV_YOLO.md](LAB05_NAV_YOLO.md) để ghi tọa độ bằng Publish Point,
+chạy `navigate_goals`, camera detector và quay video demo.
+
+World `depot` đã có sẵn **hai mô hình người 3D**, tự nạp trong cả bốn chế độ
+simulation, mapping, localization và navigation. Cấu hình nằm trong
+`worlds/depot_objects.sdf`, model được đóng gói trong `models/tb4_demo_person`.
+Không cần chạy lệnh thêm người riêng. Bố cục depot gốc được giữ nguyên;
+`map.pgm` cũ không tự cập nhật các vật thể mới.
+
 ## 0. Chuẩn bị terminal và build
 
 Mở ba terminal:
@@ -260,7 +270,14 @@ ros2 launch turtlebot4_slam_nav localization.launch.py \
 
 Giữ A mở. Launch này bật map server + AMCL, tắt SLAM và chưa chạy Nav2.
 
-**B — kiểm tra dock và undock như bước 1.4.** Sau đó trong RViz:
+Với bản đồ `depot_02.yaml` và spawn mặc định, AMCL **tự khởi tạo pose
+`(0, 0, 0)` trong hệ map**, không cần chọn **2D Pose Estimate**. Chờ LiDAR khớp
+với tường rồi kiểm tra dock và undock như bước 1.4.
+
+Nếu đổi bản đồ hoặc vị trí spawn, chế độ mặc định `auto_initial_pose:=auto`
+không áp dụng pose cũ. Có thể truyền `auto_initial_pose:=true` cùng
+`initial_pose_x`, `initial_pose_y`, `initial_pose_yaw` đã xác định trong hệ map.
+Hoặc dùng `auto_initial_pose:=false` rồi trong RViz:
 
 1. Chọn **2D Pose Estimate**.
 2. Nhấn tại **vị trí hiện tại của robot trên map**, kéo mũi tên đúng hướng robot.

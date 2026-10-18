@@ -1,0 +1,46 @@
+{
+  "started_utc": "2026-10-14T14:27:50.061902+00:00",
+  "frame_id": "map",
+  "status": "SUCCEEDED",
+  "goals": [
+    {
+      "x": -4.0,
+      "y": 0.0,
+      "yaw": 1.57079632679,
+      "name": "Goal 1",
+      "status": "SUCCEEDED",
+      "goal_uuid": "d15760634fc7473cadab8afce780ae35",
+      "elapsed_wall_sec": 69.242,
+      "elapsed_sim_sec": 15.006,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": -4.0,
+      "y": 2.0,
+      "yaw": 1.57079632679,
+      "name": "Goal 2",
+      "status": "SUCCEEDED",
+      "goal_uuid": "a9d0482d142645c19856d9e3fa7e759e",
+      "elapsed_wall_sec": 29.294,
+      "elapsed_sim_sec": 6.543,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": 0.0,
+      "y": 2.0,
+      "yaw": 2.35619449019,
+      "name": "Goal 3",
+      "status": "SUCCEEDED",
+      "goal_uuid": "68c37b9b20914589bc1128d709119497",
+      "elapsed_wall_sec": 85.997,
+      "elapsed_sim_sec": 17.967,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# NumPy 1.x de tuong thich cv_bridge cua ROS 2 Jazzy tren may nay.
+numpy==1.26.4
+# OpenCV dung python3-opencv tu apt, khong cai wheel Qt/OpenCV thu hai.
+torch==2.6.0
+torchvision==0.21.0

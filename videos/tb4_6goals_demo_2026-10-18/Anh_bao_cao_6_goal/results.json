@@ -1,0 +1,85 @@
+{
+  "started_utc": "2026-10-18T02:36:10.108656+00:00",
+  "frame_id": "map",
+  "status": "SUCCEEDED",
+  "goals": [
+    {
+      "x": -2.731011390686035,
+      "y": -2.662829637527466,
+      "yaw": 0.0,
+      "name": "Goal 1",
+      "status": "SUCCEEDED",
+      "goal_uuid": "86911023a9b74e0aaa8e1a5349de25be",
+      "elapsed_wall_sec": 27.448,
+      "elapsed_sim_sec": 16.293,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": -2.935068130493164,
+      "y": 2.5716564655303955,
+      "yaw": 0.0,
+      "name": "Goal 2",
+      "status": "SUCCEEDED",
+      "goal_uuid": "3e2a719e935e4c25a22c5e9b85fc5bdc",
+      "elapsed_wall_sec": 40.098,
+      "elapsed_sim_sec": 23.157,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": -6.648653030395508,
+      "y": -0.15880849957466125,
+      "yaw": 0.0,
+      "name": "Goal 3",
+      "status": "SUCCEEDED",
+      "goal_uuid": "327bbc2f09454076b67bbf0f3bca794e",
+      "elapsed_wall_sec": 37.31,
+      "elapsed_sim_sec": 21.732,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": 4.207592487335205,
+      "y": 3.9115066528320312,
+      "yaw": 0.0,
+      "name": "Goal 4",
+      "status": "SUCCEEDED",
+      "goal_uuid": "c13d6ac20199420dbde847fdfc1b7756",
+      "elapsed_wall_sec": 78.998,
+      "elapsed_sim_sec": 46.098,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": 8.017494201660156,
+      "y": 1.365810513496399,
+      "yaw": 0.0,
+      "name": "Goal 5",
+      "status": "SUCCEEDED",
+      "goal_uuid": "22d4664800874cf28e006413376227f4",
+      "elapsed_wall_sec": 36.147,
+      "elapsed_sim_sec": 19.659,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    },
+    {
+      "x": -6.3603668212890625,
+      "y": 3.4653286933898926,
+      "yaw": 0.0,
+      "name": "Goal 6",
+      "status": "SUCCEEDED",
+      "goal_uuid": "a9157714be42444eb92131b512da6a49",
+      "elapsed_wall_sec": 106.957,
+      "elapsed_sim_sec": 60.939,
+      "action_status": 4,
+      "error_code": 0,
+      "error_msg": ""
+    }
+  ]
+}

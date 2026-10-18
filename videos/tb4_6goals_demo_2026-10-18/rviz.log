@@ -1,0 +1,14 @@
+[INFO] [1792290821.752274979] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792290821.753013837] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1792290821.803180671] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792290822.572079616] [rviz2]: Trying to create a map of size 602 x 302 using 1 swatches
+[ERROR] [1792290822.602708516] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+rviz/glsl120/indexed_8bit_image.frag
+ GLSL link result : 
+active samplers with a different type refer to the same texture image unit
+[INFO] [1792290826.607626338] [rviz2]: Trying to create a map of size 50 x 50 using 1 swatches
+[INFO] [1792290827.987005735] [rviz2]: Trying to create a map of size 602 x 302 using 1 swatches
+[INFO] [1792290839.415738945] [rviz]: Message Filter dropping message: frame 'odom' at time 0.135 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1792290840.089851062] [rviz]: Message Filter dropping message: frame 'odom' at time 0.546 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1792290840.799617517] [rviz]: Message Filter dropping message: frame 'turtlebot4/rplidar_link/rplidar' at time 0.009 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1792291385.050604094] [rclcpp]: signal_handler(SIGINT/SIGTERM)
