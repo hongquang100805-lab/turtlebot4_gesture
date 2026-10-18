@@ -1,1 +1,0 @@
-/home/lenovo/tb4_ws/videos/tb4_auto_demo/TurtleBot4_Nav2_YOLO.webm
