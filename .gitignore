@@ -16,3 +16,8 @@ models/*.onnx
 .venv-gesture/
 
 models/*.task
+
+# Large demo videos - keep outside Git history
+videos/tb4_6goals_demo_2026-10-18/TurtleBot4_6Goals_Nav2_YOLO.webm
+artifacts/lab06_demo_2026-10-24_take01/demo_turtlebot4_gestures.webm
+artifacts/lab06_demo_2026-10-25_rviz/demo_turtlebot4_gestures.webm
