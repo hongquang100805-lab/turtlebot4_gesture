@@ -1,0 +1,69 @@
+[INFO] [1792853264.671532162] [gesture_recognition_node]: None, confidence=0.00
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792853265.133889   13147 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1792853265.138463   13209 gl_context.cc:369] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: AMD Radeon 660M (radeonsi, rembrandt, LLVM 20.1.2, DRM 3.64, 7.0.0-38-generic)
+W0000 00:00:1792853265.147856   13147 gesture_recognizer_graph.cc:129] Hand Gesture Recognizer contains CPU only ops. Sets HandGestureRecognizerGraph acceleration to Xnnpack.
+I0000 00:00:1792853265.155577   13147 hand_gesture_recognizer_graph.cc:250] Custom gesture classifier is not defined.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1792853265.198393   13214 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792853265.227652   13223 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792853265.228503   13221 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792853265.228575   13221 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792853265.858552   13225 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+[INFO] [1792853311.610874934] [gesture_recognition_node]: Open_Palm, confidence=0.66
+[INFO] [1792853311.810743266] [gesture_recognition_node]: None, confidence=0.88
+[INFO] [1792853575.510957156] [gesture_recognition_node]: Pointing_Up, confidence=0.80
+[INFO] [1792853579.710996117] [gesture_recognition_node]: None, confidence=0.93
+[INFO] [1792853580.011348405] [gesture_recognition_node]: Thumb_Up, confidence=0.65
+[INFO] [1792853614.010913992] [gesture_recognition_node]: None, confidence=0.00
+[INFO] [1792853616.612023441] [gesture_recognition_node]: Victory, confidence=0.86
+[INFO] [1792853619.612515739] [gesture_recognition_node]: None, confidence=0.64
+[INFO] [1792853619.811358501] [gesture_recognition_node]: Thumb_Up, confidence=0.73
+[INFO] [1792853658.511558944] [gesture_recognition_node]: None, confidence=0.00
+[INFO] [1792853664.410914155] [gesture_recognition_node]: Open_Palm, confidence=0.65
+[INFO] [1792853665.111472647] [gesture_recognition_node]: None, confidence=0.59
+[INFO] [1792853665.211600731] [gesture_recognition_node]: Open_Palm, confidence=0.70
+[INFO] [1792853665.311436989] [gesture_recognition_node]: Wave, confidence=0.66
+[INFO] [1792853665.611357362] [gesture_recognition_node]: None, confidence=0.57
+[INFO] [1792853665.712074479] [gesture_recognition_node]: Wave, confidence=0.66
+[INFO] [1792853666.011228938] [gesture_recognition_node]: None, confidence=0.60
+[INFO] [1792853666.111653920] [gesture_recognition_node]: Wave, confidence=0.75
+[INFO] [1792853666.312301746] [gesture_recognition_node]: None, confidence=0.64
+[INFO] [1792853666.510827468] [gesture_recognition_node]: Wave, confidence=0.75
+[INFO] [1792853666.811904033] [gesture_recognition_node]: None, confidence=0.60
+[INFO] [1792853666.911653851] [gesture_recognition_node]: Wave, confidence=0.66
+[INFO] [1792853668.912100715] [gesture_recognition_node]: Open_Palm, confidence=0.76
+[INFO] [1792853669.511104865] [gesture_recognition_node]: Wave, confidence=0.77
+[INFO] [1792853669.711153361] [gesture_recognition_node]: None, confidence=0.65
+[INFO] [1792853669.811280532] [gesture_recognition_node]: Wave, confidence=0.76
+[INFO] [1792853670.310746753] [gesture_recognition_node]: None, confidence=0.65
+[INFO] [1792853670.410997568] [gesture_recognition_node]: Wave, confidence=0.69
+[INFO] [1792853672.211015692] [gesture_recognition_node]: None, confidence=0.62
+[INFO] [1792853672.511026511] [gesture_recognition_node]: Thumb_Up, confidence=0.85
+[INFO] [1792853672.611299070] [gesture_recognition_node]: None, confidence=0.65
+[INFO] [1792853672.710949134] [gesture_recognition_node]: Thumb_Up, confidence=0.67
+[INFO] [1792853680.911575016] [gesture_recognition_node]: None, confidence=0.00
+[INFO] [1792853683.810946741] [gesture_recognition_node]: Victory, confidence=0.91
+[INFO] [1792853685.811073288] [gesture_recognition_node]: None, confidence=0.80
+[INFO] [1792853685.913351864] [gesture_recognition_node]: Thumb_Up, confidence=0.71
+[INFO] [1792853691.711022869] [gesture_recognition_node]: None, confidence=0.61
+[INFO] [1792853695.111102346] [gesture_recognition_node]: Open_Palm, confidence=0.66
+[INFO] [1792853698.211414788] [gesture_recognition_node]: None, confidence=0.73
+[INFO] [1792853698.311051461] [gesture_recognition_node]: Victory, confidence=0.68
+[INFO] [1792853701.910875611] [gesture_recognition_node]: None, confidence=0.82
+[INFO] [1792853702.011452883] [gesture_recognition_node]: Thumb_Up, confidence=0.81
+[INFO] [1792853707.411398661] [gesture_recognition_node]: None, confidence=0.50
+[INFO] [1792853707.611368559] [gesture_recognition_node]: Open_Palm, confidence=0.72
+[INFO] [1792853707.710963843] [gesture_recognition_node]: None, confidence=0.60
+[INFO] [1792853713.210925090] [gesture_recognition_node]: Victory, confidence=0.83
+[INFO] [1792853715.310951652] [gesture_recognition_node]: None, confidence=0.98
+[INFO] [1792853715.411051578] [gesture_recognition_node]: Thumb_Up, confidence=0.87
+[INFO] [1792853720.610753214] [gesture_recognition_node]: None, confidence=0.63
+[INFO] [1792853720.711571947] [gesture_recognition_node]: Closed_Fist, confidence=0.97
+[INFO] [1792853725.710864350] [gesture_recognition_node]: None, confidence=0.79
+[INFO] [1792853725.911205234] [gesture_recognition_node]: Victory, confidence=0.87
+[INFO] [1792853728.210909602] [gesture_recognition_node]: None, confidence=0.90
+[INFO] [1792853728.310971892] [gesture_recognition_node]: Thumb_Up, confidence=0.67
+[INFO] [1792853728.511058822] [gesture_recognition_node]: None, confidence=0.62
+[INFO] [1792853728.611112647] [gesture_recognition_node]: Thumb_Up, confidence=0.67
+[INFO] [1792853734.010985117] [gesture_recognition_node]: None, confidence=0.00

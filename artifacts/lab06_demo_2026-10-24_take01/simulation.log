@@ -1,0 +1,445 @@
+[INFO] [launch]: All log files can be found below /home/lenovo/tb4_ws/log/ros/2026-10-24-21-47-36-685862-lenovo-IdeaPad-Gaming-3-15ARH7-12335
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [12342]
+[INFO] [parameter_bridge-2]: process started with pid [12343]
+[INFO] [robot_state_publisher-3]: process started with pid [12344]
+[INFO] [joint_state_publisher-4]: process started with pid [12345]
+[INFO] [robot_state_publisher-5]: process started with pid [12347]
+[INFO] [static_transform_publisher-6]: process started with pid [12348]
+[INFO] [create-7]: process started with pid [12349]
+[INFO] [create-8]: process started with pid [12350]
+[INFO] [parameter_bridge-9]: process started with pid [12351]
+[INFO] [parameter_bridge-10]: process started with pid [12352]
+[INFO] [parameter_bridge-11]: process started with pid [12353]
+[INFO] [parameter_bridge-12]: process started with pid [12354]
+[INFO] [parameter_bridge-13]: process started with pid [12355]
+[INFO] [parameter_bridge-14]: process started with pid [12356]
+[INFO] [parameter_bridge-15]: process started with pid [12357]
+[INFO] [parameter_bridge-16]: process started with pid [12358]
+[INFO] [parameter_bridge-17]: process started with pid [12359]
+[INFO] [parameter_bridge-18]: process started with pid [12360]
+[INFO] [parameter_bridge-19]: process started with pid [12361]
+[INFO] [parameter_bridge-20]: process started with pid [12362]
+[INFO] [parameter_bridge-21]: process started with pid [12363]
+[INFO] [parameter_bridge-22]: process started with pid [12364]
+[INFO] [parameter_bridge-23]: process started with pid [12365]
+[INFO] [parameter_bridge-24]: process started with pid [12366]
+[INFO] [parameter_bridge-25]: process started with pid [12367]
+[INFO] [parameter_bridge-26]: process started with pid [12376]
+[INFO] [parameter_bridge-27]: process started with pid [12377]
+[INFO] [parameter_bridge-28]: process started with pid [12378]
+[INFO] [parameter_bridge-29]: process started with pid [12379]
+[INFO] [turtlebot4_node-30]: process started with pid [12384]
+[INFO] [turtlebot4_gz_hmi_node-31]: process started with pid [12387]
+[INFO] [spawner-32]: process started with pid [12388]
+[INFO] [hazards_vector_publisher-33]: process started with pid [12389]
+[INFO] [ir_intensity_vector_publisher-34]: process started with pid [12390]
+[INFO] [motion_control-35]: process started with pid [12391]
+[INFO] [wheel_status_publisher-36]: process started with pid [12394]
+[INFO] [mock_publisher-37]: process started with pid [12397]
+[INFO] [robot_state-38]: process started with pid [12402]
+[INFO] [kidnap_estimator_publisher-39]: process started with pid [12415]
+[INFO] [ui_mgr-40]: process started with pid [12419]
+[INFO] [pose_republisher_node-41]: process started with pid [12428]
+[INFO] [sensors_node-42]: process started with pid [12434]
+[INFO] [interface_buttons_node-43]: process started with pid [12441]
+[INFO] [static_transform_publisher-44]: process started with pid [12444]
+[INFO] [static_transform_publisher-45]: process started with pid [12448]
+[hazards_vector_publisher-33] [INFO] [1792853257.642284736] [hazards_vector_publisher]: Advertised topic: hazard_detection
+[hazards_vector_publisher-33] [INFO] [1792853257.642693375] [hazards_vector_publisher]: Subscription to topic: _internal/bumper/event
+[hazards_vector_publisher-33] [INFO] [1792853257.643025703] [hazards_vector_publisher]: Subscription to topic: _internal/cliff_front_left/event
+[static_transform_publisher-6] [INFO] [1792853257.645689837] [tf_odom_std_dock_link_publisher]: Spinning until stopped - publishing transform
+[static_transform_publisher-6] translation: ('6.000000', '6.000000', '0.000000')
+[static_transform_publisher-6] rotation: ('0.000000', '0.000000', '1.000000', '0.000000')
+[static_transform_publisher-6] from 'odom' to 'std_dock_link'
+[hazards_vector_publisher-33] [INFO] [1792853257.646400769] [hazards_vector_publisher]: Subscription to topic: _internal/cliff_front_right/event
+[hazards_vector_publisher-33] [INFO] [1792853257.646714442] [hazards_vector_publisher]: Subscription to topic: _internal/cliff_side_left/event
+[hazards_vector_publisher-33] [INFO] [1792853257.646923140] [hazards_vector_publisher]: Subscription to topic: _internal/cliff_side_right/event
+[hazards_vector_publisher-33] [INFO] [1792853257.647115628] [hazards_vector_publisher]: Subscription to topic: _internal/wheel_drop/left_wheel/event
+[hazards_vector_publisher-33] [INFO] [1792853257.647341428] [hazards_vector_publisher]: Subscription to topic: _internal/wheel_drop/right_wheel/event
+[hazards_vector_publisher-33] [INFO] [1792853257.647549264] [hazards_vector_publisher]: Subscription to topic: _internal/backup_limit
+[turtlebot4_node-30] [INFO] [1792853257.655773345] [turtlebot4_node]: Init Turtlebot4 Node Main
+[robot_state_publisher-3] [WARN] [1792853257.665427775] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-3] [INFO] [1792853257.665689823] [robot_state_publisher]: Robot initialized
+[robot_state_publisher-5] [WARN] [1792853257.665967369] [kdl_parser]: The root link std_dock_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-5] [INFO] [1792853257.666062435] [dock_state_publisher]: Robot initialized
+[static_transform_publisher-45] [WARN] [1792853257.672650685] []: Old-style arguments are deprecated; see --help for new-style arguments
+[parameter_bridge-12] [INFO] [1792853257.690362907] [bumper_contact_bridge]: Creating GZ->ROS Bridge: [/bumper_contact (ignition.msgs.Contacts) -> /bumper_contact (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[mock_publisher-37] [INFO] [1792853257.692145892] [mock_publisher]: Advertised mocked topic: slip_status
+[static_transform_publisher-45] [INFO] [1792853257.701906871] [camera_stf]: Spinning until stopped - publishing transform
+[static_transform_publisher-45] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-45] rotation: ('0.499952', '-0.500000', '0.500000', '0.500048')
+[static_transform_publisher-45] from 'oakd_rgb_camera_optical_frame' to 'turtlebot4/oakd_rgb_camera_frame/rgbd_camera'
+[create-7] [INFO] [1792853257.715392074] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-25] [INFO] [1792853257.727158591] [hmi_display_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/display/raw (std_msgs/msg/String) -> /hmi/display/raw (gz.msgs.StringMsg)] (Lazy 0)
+[parameter_bridge-25] [INFO] [1792853257.731231214] [hmi_display_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/display/selected (std_msgs/msg/Int32) -> /hmi/display/selected (gz.msgs.Int32)] (Lazy 0)
+[wheel_status_publisher-36] [INFO] [1792853257.731819447] [wheel_status_publisher]: Advertised topic: wheel_vels
+[wheel_status_publisher-36] [INFO] [1792853257.732379579] [wheel_status_publisher]: Advertised topic: wheel_ticks
+[parameter_bridge-19] [INFO] [1792853257.753397207] [ir_intensity_front_left_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_front_left/sensor/ir_intensity_front_left/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_front_left/sensor/ir_intensity_front_left/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-20] [INFO] [1792853257.763248032] [ir_intensity_front_right_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_front_right/sensor/ir_intensity_front_right/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_front_right/sensor/ir_intensity_front_right/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[kidnap_estimator_publisher-39] [INFO] [1792853257.783356159] [kidnap_estimator_publisher]: Advertised topic: kidnap_status
+[kidnap_estimator_publisher-39] [INFO] [1792853257.788587466] [kidnap_estimator_publisher]: Subscription to topic: hazard_detection
+[parameter_bridge-13] [INFO] [1792853257.788776147] [cliff_front_left_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_front_left/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_front_left/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[static_transform_publisher-44] [WARN] [1792853257.790209862] []: Old-style arguments are deprecated; see --help for new-style arguments
+[parameter_bridge-26] [INFO] [1792853257.790596000] [hmi_buttons_msg_bridge]: Creating GZ->ROS Bridge: [/hmi/buttons (gz.msgs.Int32) -> /hmi/buttons (std_msgs/msg/Int32)] (Lazy 0)
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.792816379] [ir_intensity_vector_publisher]: Advertised topic: ir_intensity
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.793951449] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_front_center_left
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.795047166] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_front_center_right
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.796220728] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_front_left
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.797709987] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_front_right
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.799046212] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_left
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.800109549] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_right
+[ir_intensity_vector_publisher-34] [INFO] [1792853257.801182914] [ir_intensity_vector_publisher]: Subscription to topic: _internal/ir_intensity_side_left
+[parameter_bridge-9] [INFO] [1792853257.801144523] [cmd_vel_bridge]: Creating GZ->ROS Bridge: [/cmd_vel (ignition.msgs.Twist) -> /cmd_vel (geometry_msgs/msg/TwistStamped)] (Lazy 0)
+[parameter_bridge-22] [INFO] [1792853257.801282409] [ir_intensity_right_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_right/sensor/ir_intensity_right/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_right/sensor/ir_intensity_right/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[robot_state-38] [INFO] [1792853257.802008249] [robot_state]: Advertised topic: battery_state
+[parameter_bridge-9] [INFO] [1792853257.804851045] [cmd_vel_bridge]: Creating ROS->GZ Bridge: [/model/turtlebot4/cmd_vel (geometry_msgs/msg/TwistStamped) -> /model/turtlebot4/cmd_vel (ignition.msgs.Twist)] (Lazy 0)
+[parameter_bridge-23] [INFO] [1792853257.807626104] [ir_intensity_side_left_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_side_left/sensor/ir_intensity_side_left/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_side_left/sensor/ir_intensity_side_left/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[ui_mgr-40] [INFO] [1792853257.814474518] [ui_mgr]: Advertised button topic: interface_buttons
+[create-8] [INFO] [1792853257.814654612] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-18] [INFO] [1792853257.815470389] [ir_intensity_front_center_right_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_front_center_right/sensor/ir_intensity_front_center_right/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_front_center_right/sensor/ir_intensity_front_center_right/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[ui_mgr-40] [INFO] [1792853257.819287737] [ui_mgr]: Subscription to topic: cmd_lightring
+[parameter_bridge-28] [INFO] [1792853257.821403711] [lidar_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/rplidar_link/sensor/rplidar/scan (gz.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/rplidar_link/sensor/rplidar/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[ui_mgr-40] [INFO] [1792853257.827249440] [ui_mgr]: Subscription to topic: cmd_audio
+[robot_state-38] [INFO] [1792853257.831515402] [robot_state]: Subscription to topic: dock_status
+[robot_state-38] [INFO] [1792853257.836026810] [robot_state]: Advertised topic: stop_status
+[parameter_bridge-16] [INFO] [1792853257.847773630] [cliff_side_right_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_side_right/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_side_right/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1792853257.857788611] [clock_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[robot_state-38] [INFO] [1792853257.871605781] [robot_state]: Subscription to topic: odom
+[parameter_bridge-24] [INFO] [1792853257.942363912] [buttons_msg_bridge]: Creating GZ->ROS Bridge: [/create3_buttons (ignition.msgs.Int32) -> /create3_buttons (std_msgs/msg/Int32)] (Lazy 0)
+[parameter_bridge-11] [INFO] [1792853257.952062013] [odom_base_tf_bridge]: Creating GZ->ROS Bridge: [/model/turtlebot4/tf (ignition.msgs.Pose_V) -> /model/turtlebot4/tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[motion_control-35] [INFO] [1792853257.966232631] [motion_control]: Enabling REFLEX_BUMP
+[motion_control-35] [INFO] [1792853257.966563286] [motion_control]: Enabling REFLEX_CLIFF
+[parameter_bridge-15] [INFO] [1792853257.972603757] [cliff_side_left_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_side_left/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_side_left/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[static_transform_publisher-44] [INFO] [1792853257.974172924] [rplidar_stf]: Spinning until stopped - publishing transform
+[static_transform_publisher-44] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-44] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-44] from 'rplidar_link' to 'turtlebot4/rplidar_link/rplidar'
+[parameter_bridge-21] [INFO] [1792853257.976727794] [ir_intensity_left_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_left/sensor/ir_intensity_left/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_left/sensor/ir_intensity_left/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[motion_control-35] [INFO] [1792853257.981319432] [motion_control]: Enabling REFLEX_STUCK
+[motion_control-35] [INFO] [1792853257.981636401] [motion_control]: Enabling REFLEX_WHEEL_DROP
+[parameter_bridge-10] [INFO] [1792853257.987571296] [pose_bridge]: Creating GZ->ROS Bridge: [/model/turtlebot4/pose (ignition.msgs.Pose_V) -> /model/turtlebot4/pose (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[turtlebot4_node-30] [INFO] [1792853257.993456749] [turtlebot4_node]: Buttons Init
+[turtlebot4_node-30] [INFO] [1792853258.066907198] [turtlebot4_node]: Init Display
+[parameter_bridge-10] [INFO] [1792853258.070376288] [pose_bridge]: Creating GZ->ROS Bridge: [/model/standard_dock/pose (ignition.msgs.Pose_V) -> /model/standard_dock/pose (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1792853258.076427229] [ir_intensity_front_center_left_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/ir_intensity_front_center_left/sensor/ir_intensity_front_center_left/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/ir_intensity_front_center_left/sensor/ir_intensity_front_center_left/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[turtlebot4_node-30] [INFO] [1792853258.098014978] [turtlebot4_node]: Leds Init
+[parameter_bridge-14] [INFO] [1792853258.177776482] [cliff_front_right_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_front_right/scan (ignition.msgs.LaserScan) -> /world/gesture_arena/model/turtlebot4/link/base_link/sensor/cliff_front_right/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-29] [INFO] [1792853258.308953716] [camera_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/image (gz.msgs.Image) -> /world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-29] [INFO] [1792853258.355126998] [camera_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/depth_image (gz.msgs.Image) -> /world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/depth_image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-29] [INFO] [1792853258.385547340] [camera_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/points (gz.msgs.PointCloudPacked) -> /world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/points (sensor_msgs/msg/PointCloud2)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.390354298] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/power (std_msgs/msg/Int32) -> /hmi/led/power (gz.msgs.Int32)] (Lazy 0)
+[parameter_bridge-29] [INFO] [1792853258.421052556] [camera_bridge]: Creating GZ->ROS Bridge: [/world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/camera_info (gz.msgs.CameraInfo) -> /world/gesture_arena/model/turtlebot4/link/oakd_rgb_camera_frame/sensor/rgbd_camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.427012367] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/motors (std_msgs/msg/Int32) -> /hmi/led/motors (gz.msgs.Int32)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.448904172] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/comms (std_msgs/msg/Int32) -> /hmi/led/comms (gz.msgs.Int32)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.463431233] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/wifi (std_msgs/msg/Int32) -> /hmi/led/wifi (gz.msgs.Int32)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.484918866] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/battery (std_msgs/msg/Int32) -> /hmi/led/battery (gz.msgs.Int32)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.504098407] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/user1 (std_msgs/msg/Int32) -> /hmi/led/user1 (gz.msgs.Int32)] (Lazy 0)
+[parameter_bridge-27] [INFO] [1792853258.520574412] [hmi_led_msg_bridge]: Creating ROS->GZ Bridge: [/hmi/led/user2 (std_msgs/msg/Int32) -> /hmi/led/user2 (gz.msgs.Int32)] (Lazy 0)
+[turtlebot4_node-30] [INFO] [1792853258.592747757] [turtlebot4_node]: Turtlebot4 standard running.
+[parameter_bridge-25] [INFO] [1792853258.646834903] [hmi_display_msg_bridge]: Passing message from ROS std_msgs/msg/String to Gazebo gz.msgs.StringMsg (showing msg only once per type)
+[parameter_bridge-25] [INFO] [1792853258.647699190] [hmi_display_msg_bridge]: Passing message from ROS std_msgs/msg/Int32 to Gazebo gz.msgs.Int32 (showing msg only once per type)
+[spawner-32] [INFO] [1792853258.737267369] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[joint_state_publisher-4] [INFO] [1792853258.775047445] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...
+[parameter_bridge-27] [INFO] [1792853258.911045001] [hmi_led_msg_bridge]: Passing message from ROS std_msgs/msg/Int32 to Gazebo gz.msgs.Int32 (showing msg only once per type)
+[gazebo-1] [1;32m[Msg] [0m[1;32mGazebo Sim Server v[0m[1;32m8.11.0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/home/lenovo/tb4_ws/install/turtlebot4_gesture_control/share/turtlebot4_gesture_control/worlds/gesture_arena.sdf[0m[1;32m].[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/gesture_arena/create_multiple[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/gesture_arena/create_multiple/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/gesture_arena/remove[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/gesture_arena/remove/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_pose[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_pose/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_pose_vector[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_pose_vector/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/gesture_arena/light_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/gesture_arena/light_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_physics[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_physics/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_spherical_coordinates[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/gesture_arena/set_spherical_coordinates/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/gesture_arena/enable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/gesture_arena/enable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/gesture_arena/disable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/gesture_arena/disable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/gesture_arena/visual_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/gesture_arena/visual_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/gesture_arena/wheel_slip[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/gesture_arena/wheel_slip/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32mdefault[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/gesture_arena[0m[1;32m/control], [[0m[1;32m/world/gesture_arena[0m[1;32m/control/state] and [[0m[1;32m/world/gesture_arena[0m[1;32m/playback/control][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[create-7] [INFO] [1792853259.058453737] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-7] [INFO] [1792853259.156704805] [ros_gz_sim]: Entity creation successful.
+[create-8] [INFO] [1792853259.159557519] [ros_gz_sim]: Waiting messages on topic [standard_dock_description].
+[create-8] [INFO] [1792853259.174444420] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-7]: process has finished cleanly [pid 12349]
+[INFO] [create-8]: process has finished cleanly [pid 12350]
+[gazebo-1] [1;32m[Msg] [0m[1;32mWorld [[0m[1;32mgesture_arena[0m[1;32m] initialized with [[0m[1;32mdefault[0m[1;32m] physics profile.[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="turtlebot4"]/joint[@name="wheel_drop_left_joint"]/physics/ode/provide_feedback:<urdf-string>:L0]: XML Element[provide_feedback], child of element[ode], not defined in SDF. Copying[provide_feedback] as children of [ode].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="turtlebot4"]/joint[@name="wheel_drop_right_joint"]/physics/ode/provide_feedback:<urdf-string>:L0]: XML Element[provide_feedback], child of element[ode], not defined in SDF. Copying[provide_feedback] as children of [ode].
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[gazebo-1] [INFO] [1792853260.858000033] [gz_ros_control]: [gz_ros2_control] Fixed joint ['bumper_joint'] (Entity='109') is skipped.
+[gazebo-1] [INFO] [1792853260.858088087] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_caster_joint'] (Entity='110') is skipped.
+[gazebo-1] [INFO] [1792853260.858094148] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_left_bottom_weight_block_joint'] (Entity='111') is skipped.
+[gazebo-1] [INFO] [1792853260.858099177] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_left_top_weight_block_joint'] (Entity='112') is skipped.
+[gazebo-1] [INFO] [1792853260.858103866] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_right_bottom_weight_block_joint'] (Entity='113') is skipped.
+[gazebo-1] [INFO] [1792853260.858108605] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_right_top_weight_block_joint'] (Entity='114') is skipped.
+[gazebo-1] [INFO] [1792853260.858113143] [gz_ros_control]: [gz_ros2_control] Fixed joint ['imu_joint'] (Entity='115') is skipped.
+[gazebo-1] [INFO] [1792853260.858116900] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_front_center_left_joint'] (Entity='116') is skipped.
+[gazebo-1] [INFO] [1792853260.858121248] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_front_center_right_joint'] (Entity='117') is skipped.
+[gazebo-1] [INFO] [1792853260.858125426] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_front_left_joint'] (Entity='118') is skipped.
+[gazebo-1] [INFO] [1792853260.858129894] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_front_right_joint'] (Entity='119') is skipped.
+[gazebo-1] [INFO] [1792853260.858134172] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_left_joint'] (Entity='120') is skipped.
+[gazebo-1] [INFO] [1792853260.858138440] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_right_joint'] (Entity='121') is skipped.
+[gazebo-1] [INFO] [1792853260.858142859] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_intensity_side_left_joint'] (Entity='122') is skipped.
+[gazebo-1] [INFO] [1792853260.858147247] [gz_ros_control]: [gz_ros2_control] Fixed joint ['ir_omni_joint'] (Entity='123') is skipped.
+[gazebo-1] [INFO] [1792853260.858150763] [gz_ros_control]: [gz_ros2_control] Fixed joint ['mouse_joint'] (Entity='124') is skipped.
+[gazebo-1] [INFO] [1792853260.858154510] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_left_tower_standoff_joint'] (Entity='125') is skipped.
+[gazebo-1] [INFO] [1792853260.858158948] [gz_ros_control]: [gz_ros2_control] Fixed joint ['front_right_tower_standoff_joint'] (Entity='126') is skipped.
+[gazebo-1] [INFO] [1792853260.858163307] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_camera_bracket_joint'] (Entity='127') is skipped.
+[gazebo-1] [INFO] [1792853260.858167554] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_joint'] (Entity='128') is skipped.
+[gazebo-1] [INFO] [1792853260.858171352] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_imu_joint'] (Entity='129') is skipped.
+[gazebo-1] [INFO] [1792853260.858174988] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_left_camera_joint'] (Entity='130') is skipped.
+[gazebo-1] [INFO] [1792853260.858179186] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_left_camera_optical_joint'] (Entity='131') is skipped.
+[gazebo-1] [INFO] [1792853260.858183324] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_rgb_camera_joint'] (Entity='132') is skipped.
+[gazebo-1] [INFO] [1792853260.858187421] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_rgb_camera_optical_joint'] (Entity='133') is skipped.
+[gazebo-1] [INFO] [1792853260.858191489] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_right_camera_joint'] (Entity='134') is skipped.
+[gazebo-1] [INFO] [1792853260.858195446] [gz_ros_control]: [gz_ros2_control] Fixed joint ['oakd_right_camera_optical_joint'] (Entity='135') is skipped.
+[gazebo-1] [INFO] [1792853260.858199584] [gz_ros_control]: [gz_ros2_control] Fixed joint ['rear_left_tower_standoff_joint'] (Entity='136') is skipped.
+[gazebo-1] [INFO] [1792853260.858204042] [gz_ros_control]: [gz_ros2_control] Fixed joint ['rear_right_tower_standoff_joint'] (Entity='137') is skipped.
+[gazebo-1] [INFO] [1792853260.858208721] [gz_ros_control]: [gz_ros2_control] Fixed joint ['rplidar_joint'] (Entity='138') is skipped.
+[gazebo-1] [INFO] [1792853260.858214171] [gz_ros_control]: [gz_ros2_control] Fixed joint ['tower_sensor_plate_joint'] (Entity='139') is skipped.
+[gazebo-1] [INFO] [1792853260.861501424] [gz_ros_control]: Loading controller_manager
+[gazebo-1] [INFO] [1792853260.883319954] [controller_manager]: Using ROS clock for triggering controller manager cycles.
+[gazebo-1] [WARN] [1792853260.883364597] [controller_manager]: The resource manager is not yet initialized, will wait for the robot description to initialize it..
+[gazebo-1] [INFO] [1792853260.892459538] [controller_manager]: Subscribing to '/robot_description' topic for robot description.
+[gazebo-1] [WARN] [1792853260.892498441] [gz_ros_control]: Waiting RM to load and initialize hardware...
+[joint_state_publisher-4] [INFO] [1792853261.357009159] [joint_state_publisher]: Got description, configuring robot
+[gazebo-1] [INFO] [1792853261.357661982] [controller_manager]: Received robot description from topic.
+[gazebo-1] [INFO] [1792853261.357750868] [controller_manager]: Enforcing command limits is disabled. Command limits from URDF will be ignored.
+[gazebo-1] [INFO] [1792853261.366675293] [gz_ros_control]: The position_proportional_gain has been set to: 0.1
+[gazebo-1] [INFO] [1792853261.366748228] [gz_ros_control]: Loading joint: left_wheel_joint
+[gazebo-1] [INFO] [1792853261.366758838] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1792853261.366767434] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1792853261.366774437] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1792853261.366784025] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1792853261.366789004] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1792853261.366874022] [gz_ros_control]: Loading sensor: imu
+[gazebo-1] [INFO] [1792853261.366887597] [gz_ros_control]: 	State:
+[gazebo-1] [WARN] [1792853261.366892096] [gz_ros_control]: IMU sensor 'imu' not found in hardware_info, skipping.
+[gazebo-1] [INFO] [1792853261.366995759] [controller_manager]: Initialize hardware 'left_wheel_controller' 
+[gazebo-1] [WARN] [1792853261.367018661] [controller_manager.hardware_component.system.left_wheel_controller]: Executor is not available during hardware component initialization for 'left_wheel_controller'. Skipping node creation!
+[gazebo-1] [INFO] [1792853261.367085746] [controller_manager]: Successful initialization of hardware 'left_wheel_controller'
+[gazebo-1] [INFO] [1792853261.367228010] [gz_ros_control]: The position_proportional_gain has been set to: 0.1
+[gazebo-1] [INFO] [1792853261.367272243] [gz_ros_control]: Loading joint: right_wheel_joint
+[gazebo-1] [INFO] [1792853261.367279256] [gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1792853261.367286750] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1792853261.367292550] [gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1792853261.367297219] [gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1792853261.367301477] [gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1792853261.367314722] [gz_ros_control]: Loading sensor: imu
+[gazebo-1] [INFO] [1792853261.367319220] [gz_ros_control]: 	State:
+[gazebo-1] [WARN] [1792853261.367322516] [gz_ros_control]: IMU sensor 'imu' not found in hardware_info, skipping.
+[gazebo-1] [INFO] [1792853261.367337103] [controller_manager]: Initialize hardware 'right_wheel_controller' 
+[gazebo-1] [WARN] [1792853261.367350077] [controller_manager.hardware_component.system.right_wheel_controller]: Executor is not available during hardware component initialization for 'right_wheel_controller'. Skipping node creation!
+[gazebo-1] [INFO] [1792853261.367363442] [controller_manager]: Successful initialization of hardware 'right_wheel_controller'
+[gazebo-1] [INFO] [1792853261.367426489] [controller_manager]: Activating component 'right_wheel_controller'.
+[gazebo-1] [INFO] [1792853261.367486541] [resource_manager]: 'configure' hardware 'right_wheel_controller' 
+[gazebo-1] [INFO] [1792853261.367492021] [gz_ros_control]: System Successfully configured!
+[gazebo-1] [INFO] [1792853261.367496329] [resource_manager]: Successful 'configure' of hardware 'right_wheel_controller'
+[gazebo-1] [INFO] [1792853261.367502952] [resource_manager]: 'activate' hardware 'right_wheel_controller' 
+[gazebo-1] [INFO] [1792853261.367518781] [resource_manager]: Successful 'activate' of hardware 'right_wheel_controller'
+[gazebo-1] [INFO] [1792853261.367590144] [controller_manager]: Activating component 'left_wheel_controller'.
+[gazebo-1] [INFO] [1792853261.367597097] [resource_manager]: 'configure' hardware 'left_wheel_controller' 
+[gazebo-1] [INFO] [1792853261.367599461] [gz_ros_control]: System Successfully configured!
+[gazebo-1] [INFO] [1792853261.367602938] [resource_manager]: Successful 'configure' of hardware 'left_wheel_controller'
+[gazebo-1] [INFO] [1792853261.367624668] [resource_manager]: 'activate' hardware 'left_wheel_controller' 
+[gazebo-1] [INFO] [1792853261.367629467] [resource_manager]: Successful 'activate' of hardware 'left_wheel_controller'
+[gazebo-1] [WARN] [1792853261.367643162] [controller_manager]: Component 'right_wheel_controller' does not have read or write statistics initialized, skipping registration.
+[gazebo-1] [WARN] [1792853261.367649334] [controller_manager]: Component 'left_wheel_controller' does not have read or write statistics initialized, skipping registration.
+[gazebo-1] [INFO] [1792853261.367655936] [controller_manager]: Resource Manager has been successfully initialized. Starting Controller Manager services...
+[gazebo-1] [INFO] [1792853262.340329820] [controller_manager]: Loading controller : 'joint_state_broadcaster' of type 'joint_state_broadcaster/JointStateBroadcaster'
+[gazebo-1] [INFO] [1792853262.340388519] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[gazebo-1] [WARN] [1792853262.347651184] [controller_manager]: The use of remapping arguments to the controller_manager node is deprecated. Please use the '--controller-ros-args' argument of the spawner to pass remapping arguments to the controller node.
+[gazebo-1] [INFO] [1792853262.347687441] [controller_manager]: Controller 'joint_state_broadcaster' node arguments: --ros-args --params-file /opt/ros/jazzy/share/irobot_create_control/config/control.yaml --ros-args --remap ~/odom:=odom --remap /tf:=tf --remap /tf_static:=tf_static --remap /diagnostics:=diagnostics -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-32] [INFO] [1792853262.392140353] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[gazebo-1] [INFO] [1792853262.395335966] [controller_manager]: Configuring controller: 'joint_state_broadcaster'
+[gazebo-1] [INFO] [1792853262.395608753] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[gazebo-1] [INFO] [1792853262.411756119] [controller_manager]: Activating controllers: [ joint_state_broadcaster ]
+[gazebo-1] [INFO] [1792853263.121139952] [controller_manager]: Successfully switched controllers!
+[spawner-32] [INFO] [1792853263.122682781] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[INFO] [spawner-32]: process has finished cleanly [pid 12388]
+[INFO] [spawner-46]: process started with pid [13111]
+[spawner-46] [INFO] [1792853263.623475599] [spawner_diffdrive_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-46] [INFO] [1792853264.653193168] [spawner_diffdrive_controller]: Setting controller param "params_file" to "['/opt/ros/jazzy/share/irobot_create_control/config/control.yaml']" for diffdrive_controller
+[gazebo-1] [INFO] [1792853264.664324879] [controller_manager]: Loading controller : 'diffdrive_controller' of type 'diff_drive_controller/DiffDriveController'
+[gazebo-1] [INFO] [1792853264.664389109] [controller_manager]: Loading controller 'diffdrive_controller'
+[gazebo-1] [WARN] [1792853264.671466350] [controller_manager]: The use of remapping arguments to the controller_manager node is deprecated. Please use the '--controller-ros-args' argument of the spawner to pass remapping arguments to the controller node.
+[gazebo-1] [INFO] [1792853264.671510752] [controller_manager]: Controller 'diffdrive_controller' node arguments: --ros-args --params-file /opt/ros/jazzy/share/irobot_create_control/config/control.yaml --ros-args --remap ~/odom:=odom --remap /tf:=tf --remap /tf_static:=tf_static --remap /diagnostics:=diagnostics -p use_sim_time:=true --params-file /opt/ros/jazzy/share/irobot_create_control/config/control.yaml --param use_sim_time:=true 
+[spawner-46] [INFO] [1792853265.210597747] [spawner_diffdrive_controller]: Loaded diffdrive_controller
+[gazebo-1] [INFO] [1792853265.214643511] [controller_manager]: Configuring controller: 'diffdrive_controller'
+[gazebo-1] [WARN] [1792853265.214770988] [diffdrive_controller]: [deprecated] has_jerk_limits parameter is deprecated, instead set the respective limits to NAN
+[gazebo-1] [WARN] [1792853265.214789061] [diffdrive_controller]: [deprecated] has_jerk_limits parameter is deprecated, instead set the respective limits to NAN
+[gazebo-1] [1;32m[Msg] [0m[1;32mContact system publishing on [0m[1;32m/bumper_contact[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing scene information on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mscene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing graph information on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mscene/graph[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mstate[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state (async) on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mstate_async[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing scene information on [[0m[1;32m/world/gesture_arena/scene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing entity deletions on [[0m[1;32m/world/gesture_arena/scene/deletion[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing state changes on [[0m[1;32m/world/gesture_arena/state[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing pose messages on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mpose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing dynamic pose messages on [[0m[1;32m/world/gesture_arena[0m[1;32m/[0m[1;32mdynamic_pose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading plugin [[0m[1;32mgz-rendering-ogre2[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;33m[Wrn] [ColladaLoader.cc:2395] [0m[1;33mTriangle input semantic: '[0m[1;33mCOLOR[0m[1;33m' is currently[0m[1;33m not supported[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [ColladaLoader.cc:2395] [0m[1;33mTriangle input semantic: '[0m[1;33mCOLOR[0m[1;33m' is currently[0m[1;33m not supported[0m[1;33m[0m
+[gazebo-1] [INFO] [1792853266.309683862] [controller_manager]: Activating controllers: [ diffdrive_controller ]
+[gazebo-1] [INFO] [1792853266.310040946] [controller_manager]: Successfully switched controllers!
+[spawner-46] [INFO] [1792853266.313208817] [spawner_diffdrive_controller]: Configured and activated diffdrive_controller
+[parameter_bridge-9] [INFO] [1792853266.342625595] [cmd_vel_bridge]: Passing message from ROS geometry_msgs/msg/TwistStamped to Gazebo gz.msgs.Twist (showing msg only once per type)
+[INFO] [spawner-46]: process has finished cleanly [pid 13111]
+[gazebo-1] [1;33m[Wrn] [Component.hh:127] [0m[1;33mTrying to serialize component with data type [[0m[1;33mSt10shared_ptrIN3sdf3v147ElementEE[0m[1;33m], which doesn't have [0m[1;33m`operator<<`. Component will not be serialized.[0m[1;33m[0m
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [static_transform_publisher-45]: sending signal 'SIGINT' to process[static_transform_publisher-45]
+[INFO] [static_transform_publisher-44]: sending signal 'SIGINT' to process[static_transform_publisher-44]
+[INFO] [interface_buttons_node-43]: sending signal 'SIGINT' to process[interface_buttons_node-43]
+[INFO] [sensors_node-42]: sending signal 'SIGINT' to process[sensors_node-42]
+[INFO] [pose_republisher_node-41]: sending signal 'SIGINT' to process[pose_republisher_node-41]
+[INFO] [ui_mgr-40]: sending signal 'SIGINT' to process[ui_mgr-40]
+[INFO] [kidnap_estimator_publisher-39]: sending signal 'SIGINT' to process[kidnap_estimator_publisher-39]
+[INFO] [robot_state-38]: sending signal 'SIGINT' to process[robot_state-38]
+[INFO] [mock_publisher-37]: sending signal 'SIGINT' to process[mock_publisher-37]
+[INFO] [wheel_status_publisher-36]: sending signal 'SIGINT' to process[wheel_status_publisher-36]
+[INFO] [motion_control-35]: sending signal 'SIGINT' to process[motion_control-35]
+[INFO] [ir_intensity_vector_publisher-34]: sending signal 'SIGINT' to process[ir_intensity_vector_publisher-34]
+[INFO] [hazards_vector_publisher-33]: sending signal 'SIGINT' to process[hazards_vector_publisher-33]
+[INFO] [turtlebot4_gz_hmi_node-31]: sending signal 'SIGINT' to process[turtlebot4_gz_hmi_node-31]
+[INFO] [turtlebot4_node-30]: sending signal 'SIGINT' to process[turtlebot4_node-30]
+[INFO] [static_transform_publisher-44]: process has finished cleanly [pid 12444]
+[INFO] [parameter_bridge-29]: sending signal 'SIGINT' to process[parameter_bridge-29]
+[INFO] [parameter_bridge-28]: sending signal 'SIGINT' to process[parameter_bridge-28]
+[INFO] [parameter_bridge-27]: sending signal 'SIGINT' to process[parameter_bridge-27]
+[INFO] [interface_buttons_node-43]: process has finished cleanly [pid 12441]
+[INFO] [static_transform_publisher-45]: process has finished cleanly [pid 12448]
+[INFO] [parameter_bridge-26]: sending signal 'SIGINT' to process[parameter_bridge-26]
+[INFO] [parameter_bridge-25]: sending signal 'SIGINT' to process[parameter_bridge-25]
+[INFO] [parameter_bridge-24]: sending signal 'SIGINT' to process[parameter_bridge-24]
+[INFO] [parameter_bridge-23]: sending signal 'SIGINT' to process[parameter_bridge-23]
+[INFO] [parameter_bridge-22]: sending signal 'SIGINT' to process[parameter_bridge-22]
+[INFO] [parameter_bridge-21]: sending signal 'SIGINT' to process[parameter_bridge-21]
+[INFO] [parameter_bridge-20]: sending signal 'SIGINT' to process[parameter_bridge-20]
+[INFO] [parameter_bridge-19]: sending signal 'SIGINT' to process[parameter_bridge-19]
+[INFO] [parameter_bridge-18]: sending signal 'SIGINT' to process[parameter_bridge-18]
+[INFO] [parameter_bridge-17]: sending signal 'SIGINT' to process[parameter_bridge-17]
+[INFO] [parameter_bridge-16]: sending signal 'SIGINT' to process[parameter_bridge-16]
+[INFO] [parameter_bridge-15]: sending signal 'SIGINT' to process[parameter_bridge-15]
+[INFO] [mock_publisher-37]: process has finished cleanly [pid 12397]
+[INFO] [kidnap_estimator_publisher-39]: process has finished cleanly [pid 12415]
+[INFO] [parameter_bridge-14]: sending signal 'SIGINT' to process[parameter_bridge-14]
+[INFO] [wheel_status_publisher-36]: process has finished cleanly [pid 12394]
+[INFO] [parameter_bridge-13]: sending signal 'SIGINT' to process[parameter_bridge-13]
+[INFO] [ui_mgr-40]: process has finished cleanly [pid 12419]
+[INFO] [parameter_bridge-12]: sending signal 'SIGINT' to process[parameter_bridge-12]
+[INFO] [pose_republisher_node-41]: process has finished cleanly [pid 12428]
+[INFO] [parameter_bridge-11]: sending signal 'SIGINT' to process[parameter_bridge-11]
+[INFO] [robot_state-38]: process has finished cleanly [pid 12402]
+[INFO] [parameter_bridge-10]: sending signal 'SIGINT' to process[parameter_bridge-10]
+[INFO] [parameter_bridge-9]: sending signal 'SIGINT' to process[parameter_bridge-9]
+[INFO] [static_transform_publisher-6]: sending signal 'SIGINT' to process[static_transform_publisher-6]
+[INFO] [robot_state_publisher-5]: sending signal 'SIGINT' to process[robot_state_publisher-5]
+[INFO] [parameter_bridge-27]: process has finished cleanly [pid 12377]
+[INFO] [joint_state_publisher-4]: sending signal 'SIGINT' to process[joint_state_publisher-4]
+[INFO] [robot_state_publisher-3]: sending signal 'SIGINT' to process[robot_state_publisher-3]
+[INFO] [parameter_bridge-28]: process has finished cleanly [pid 12378]
+[INFO] [ir_intensity_vector_publisher-34]: process has finished cleanly [pid 12390]
+[INFO] [parameter_bridge-2]: sending signal 'SIGINT' to process[parameter_bridge-2]
+[INFO] [parameter_bridge-29]: process has finished cleanly [pid 12379]
+[INFO] [parameter_bridge-24]: process has finished cleanly [pid 12366]
+[INFO] [hazards_vector_publisher-33]: process has finished cleanly [pid 12389]
+[INFO] [gazebo-1]: sending signal 'SIGINT' to process[gazebo-1]
+[static_transform_publisher-45] [INFO] [1792853984.400626837] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-21]: process has finished cleanly [pid 12363]
+[INFO] [parameter_bridge-25]: process has finished cleanly [pid 12367]
+[INFO] [parameter_bridge-26]: process has finished cleanly [pid 12376]
+[static_transform_publisher-44] [INFO] [1792853984.409382502] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[interface_buttons_node-43] [INFO] [1792853984.417887435] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[sensors_node-42] [INFO] [1792853984.427313138] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[pose_republisher_node-41] [INFO] [1792853984.437428646] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ui_mgr-40] [INFO] [1792853984.448405221] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[kidnap_estimator_publisher-39] [INFO] [1792853984.455856145] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state-38] [INFO] [1792853984.467092709] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[mock_publisher-37] [INFO] [1792853984.477798295] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[wheel_status_publisher-36] [INFO] [1792853984.489038957] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[motion_control-35] [INFO] [1792853984.507955234] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ir_intensity_vector_publisher-34] [INFO] [1792853984.537174802] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[hazards_vector_publisher-33] [INFO] [1792853984.568783397] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[turtlebot4_gz_hmi_node-31] [INFO] [1792853984.605642774] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[turtlebot4_node-30] [INFO] [1792853984.637201535] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-29] [INFO] [1792853984.646848714] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-28] [INFO] [1792853984.658931998] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-27] [INFO] [1792853984.668996029] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-26] [INFO] [1792853984.679213269] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-29] Failed to delete datawriter, at ./src/publisher.cpp:45 during '__function__'
+[parameter_bridge-25] [INFO] [1792853984.687441142] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-22]: process has finished cleanly [pid 12364]
+[parameter_bridge-24] [INFO] [1792853984.700399309] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-23] [INFO] [1792853984.706053969] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-22] [INFO] [1792853984.717668613] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-21] [INFO] [1792853984.728500947] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-20] [INFO] [1792853984.738115274] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-19] [INFO] [1792853984.749387294] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-18] [INFO] [1792853984.756038877] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-17] [INFO] [1792853984.765593201] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-16] [INFO] [1792853984.782766996] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-15] [INFO] [1792853984.784152879] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-14] [INFO] [1792853984.793403853] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-13] [INFO] [1792853984.806627459] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-12] [INFO] [1792853984.817109265] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-11] [INFO] [1792853984.826447584] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-10] [INFO] [1792853984.835443770] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-10] Failed to delete datawriter, at ./src/publisher.cpp:45 during '__function__'
+[parameter_bridge-9] [INFO] [1792853984.843959794] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[static_transform_publisher-6] [INFO] [1792853984.853292993] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-5] [INFO] [1792853984.861877576] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [turtlebot4_gz_hmi_node-31]: process has finished cleanly [pid 12387]
+[INFO] [parameter_bridge-19]: process has finished cleanly [pid 12361]
+[robot_state_publisher-3] [INFO] [1792853984.879902459] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-23]: process has finished cleanly [pid 12365]
+[parameter_bridge-2] [INFO] [1792853984.888153756] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-18]: process has finished cleanly [pid 12360]
+[INFO] [parameter_bridge-20]: process has finished cleanly [pid 12362]
+[INFO] [parameter_bridge-16]: process has finished cleanly [pid 12358]
+[INFO] [parameter_bridge-14]: process has finished cleanly [pid 12356]
+[INFO] [parameter_bridge-15]: process has finished cleanly [pid 12357]
+[INFO] [parameter_bridge-17]: process has finished cleanly [pid 12359]
+[INFO] [parameter_bridge-13]: process has finished cleanly [pid 12355]
+[INFO] [sensors_node-42]: process has finished cleanly [pid 12434]
+[INFO] [parameter_bridge-12]: process has finished cleanly [pid 12354]
+[INFO] [motion_control-35]: process has finished cleanly [pid 12391]
+[INFO] [parameter_bridge-11]: process has finished cleanly [pid 12353]
+[INFO] [parameter_bridge-10]: process has finished cleanly [pid 12352]
+[INFO] [turtlebot4_node-30]: process has finished cleanly [pid 12384]
+[INFO] [parameter_bridge-9]: process has finished cleanly [pid 12351]
+[INFO] [static_transform_publisher-6]: process has finished cleanly [pid 12348]
+[INFO] [robot_state_publisher-5]: process has finished cleanly [pid 12347]
+[INFO] [robot_state_publisher-3]: process has finished cleanly [pid 12344]
+[INFO] [parameter_bridge-2]: process has finished cleanly [pid 12343]
+[INFO] [joint_state_publisher-4]: process has finished cleanly [pid 12345]

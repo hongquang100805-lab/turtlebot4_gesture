@@ -12,3 +12,7 @@ __pycache__/
 .venv-yolo/
 models/*.pt
 models/*.onnx
+
+.venv-gesture/
+
+models/*.task

@@ -87,7 +87,7 @@ def launch_mode(context, mode):
         'use_sim_time': 'true', 'rviz': 'false',
         'slam': 'false', 'localization': 'false', 'nav2': 'false',
     }
-    simulator_args.update({key: LaunchConfiguration(key) for key in ('x', 'y', 'z', 'yaw')})
+    simulator_args.update({key: LaunchConfiguration(key) for key in ('x', 'y', 'z', 'yaw')})    
     profile = str(Path(get_package_share_directory('turtlebot4_slam_nav'))
                   / 'config/fastdds_local.xml')
     actions = [

@@ -1,0 +1,7 @@
+stage,behavior,result,video_seconds,interrupted_attempts
+1,back_and_forth,COMPLETED,47.22,0
+2,circle,COMPLETED,92.87,0
+3,greeting,COMPLETED,115.22,1
+4,circle,STOPPED,144.57,1
+5,circle,IDLE,157.68,0
+6,circle,SIGNAL_LOST,171.52,0

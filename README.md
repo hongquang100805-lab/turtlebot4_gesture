@@ -1,5 +1,7 @@
 # TurtleBot 4 — Localization, Navigation qua 6 goal và nhận diện YOLO
 
+**Bài tập 6 — điều khiển bằng cử chỉ tay:** xem [README bài 6](src/turtlebot4_gesture_control/README.md) để chạy webcam MediaPipe, sân mô phỏng trống và node hành vi.
+
 Sử dụng bản đồ đã quét ở bài trước để định vị TurtleBot 4 trong Gazebo, chạy **node ROS 2 điều hướng tuần tự qua 6 goal**, đồng thời nhận diện vật thể từ camera bằng **YOLO11n**.
 
 - Môi trường: **Ubuntu 24.04 · ROS 2 Jazzy · Gazebo Harmonic · Python 3.12**.
@@ -268,7 +270,7 @@ Ghi xong thì `Ctrl+C` recorder. Khi chạy node điều hướng, truyền `goa
 | `scripts/env.sh` | Nạp ROS/workspace và cấu hình liên lạc |
 | `scripts/setup_yolo.sh` | Chuẩn bị môi trường inference |
 | `setup.py`, `package.xml` | Đóng gói node và khai báo phụ thuộc |
-
+x
 ## 9. Dừng chương trình
 
 1. `Ctrl+C` terminal B; node yêu cầu hủy action nếu robot còn đang thực hiện goal.
