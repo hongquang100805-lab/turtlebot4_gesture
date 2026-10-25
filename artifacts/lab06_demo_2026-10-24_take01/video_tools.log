@@ -1,7 +1,0 @@
-Collecting imageio-ffmpeg
-  Downloading imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
-Downloading imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl (29.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.5/29.5 MB 14.4 MB/s eta 0:00:00
-WARNING: Skipping /usr/lib/python3.12/dist-packages/pybind11-2.11.1.dist-info due to invalid metadata entry 'name'
-Installing collected packages: imageio-ffmpeg
-Successfully installed imageio-ffmpeg-0.6.0

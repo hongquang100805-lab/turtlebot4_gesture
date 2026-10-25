@@ -1,1 +1,0 @@
-/tmp/lab06_video_tools/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2
