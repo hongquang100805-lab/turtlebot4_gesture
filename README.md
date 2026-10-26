@@ -1,6 +1,6 @@
 # TurtleBot 4 — Localization, Navigation qua 6 goal và nhận diện YOLO
 
-**Bài tập 6 — điều khiển bằng cử chỉ tay:** xem [README bài 6](src/turtlebot4_gesture_control/README.md) để chạy webcam MediaPipe, sân mô phỏng trống và node hành vi.
+**Bài tập 6 — điều khiển bằng cử chỉ tay:** xem [README bài 6](src/turtlebot4_gesture_control/README.md) để chạy webcam MediaPipe, sân mô phỏng trống, node hành vi và [mở RViz xem quỹ đạo](src/turtlebot4_gesture_control/README.md#5-terminal-d--mở-rviz-và-xem-quỹ-đạo-robot).
 
 Sử dụng bản đồ đã quét ở bài trước để định vị TurtleBot 4 trong Gazebo, chạy **node ROS 2 điều hướng tuần tự qua 6 goal**, đồng thời nhận diện vật thể từ camera bằng **YOLO11n**.
 

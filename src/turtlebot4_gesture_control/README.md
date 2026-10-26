@@ -58,7 +58,7 @@ Nếu chỉ cửa sổ GUI bị `Segmentation fault` nhưng server vẫn chạy,
 ros2 launch turtlebot4_gesture_control gui.launch.py
 ```
 
-Lệnh này chỉ mở lại cửa sổ, giữ nguyên vị trí robot và thời gian mô phỏng. Nếu đã Ctrl+C terminal mô phỏng khiến server dừng, chạy lại `arena.launch.py`. Cả ba terminal phải cùng `ROS_DOMAIN_ID=76`; thiếu `/scan`, `/odom` hoặc `/clock` ở domain của controller sẽ gây `NOT_READY`.
+Lệnh này chỉ mở lại cửa sổ, giữ nguyên vị trí robot và thời gian mô phỏng. Nếu đã Ctrl+C terminal mô phỏng khiến server dừng, chạy lại `arena.launch.py`. Tất cả terminal phải cùng `ROS_DOMAIN_ID=76`; thiếu `/scan`, `/odom` hoặc `/clock` ở domain của controller sẽ gây `NOT_READY`.
 
 Trong terminal kiểm tra (sau khi nạp cùng môi trường):
 
@@ -97,7 +97,7 @@ Cửa sổ hiển thị landmarks, nhãn, confidence và trạng thái điều k
 
 Không có phím nào dùng để lái robot trong cửa sổ. Đóng cửa sổ hoặc Ctrl+C sẽ dừng node; node hành vi tự dừng khi mất heartbeat.
 
-Theo dõi trong terminal D:
+Theo dõi trong một terminal riêng (cũng nạp môi trường ở mục 1):
 
 ```bash
 ros2 topic echo /detected_gesture
@@ -109,9 +109,42 @@ ros2 topic echo /robot_behavior_state --qos-durability transient_local
 - `/gesture_recognition/debug`: nhãn MediaPipe gốc, confidence và thời gian xử lý.
 - `/gesture_recognition/image`: ảnh webcam có chú thích, có thể thêm Image trong RViz.
 
-## 5. Thứ tự demo cần quay
+## 5. Terminal D — mở RViz và xem quỹ đạo robot
 
-1. Cho thấy webcam có nhãn và Gazebo có robot trong sân trống; `ready=true`.
+Mở terminal mới, nạp môi trường rồi chạy RViz:
+
+```bash
+cd ~/tb4_ws
+export TB4_LAB_DOMAIN_ID=76
+source src/turtlebot4_slam_nav/scripts/env.sh
+
+ros2 run rviz2 rviz2 \
+  -d "$(ros2 pkg prefix --share turtlebot4_slam_nav)/rviz/simulation.rviz" \
+  --ros-args -p use_sim_time:=true
+```
+
+Cấu hình có sẵn hiển thị **RobotModel**, **Grid** và **LaserScan**. Trong bài cử chỉ, dùng **Fixed Frame = `odom`**, không cần load bản đồ hoặc chạy AMCL/Nav2.
+
+Để thấy đường robot đã di chuyển:
+
+1. Chọn **Add → By display type → Odometry → OK**.
+2. Mở display **Odometry**, đặt **Topic = `/odom`**, **Reliability Policy = Best Effort**.
+3. Đặt **Keep = 1000**, **Position Tolerance = 0.01**, **Angle Tolerance = 0.05** để giữ các vị trí/hướng đã đi qua.
+4. Chọn **Shape = Arrow**, giảm chiều dài mũi tên nếu hình quá dày; chọn màu nổi bật như xanh lá.
+5. Trong **Views**, chọn **TopDownOrtho**, cuộn chuột phóng to vùng robot chạy. Các mũi tên odometry tạo vệt quỹ đạo, đồng thời cho thấy hướng xoay khi robot chào.
+
+Nhấn **Reset** trên RViz trước khi demo một hành vi mới nếu muốn xóa vệt cũ. Có thể **File → Save Config As** vào `~/tb4_ws/gesture_demo.rviz`; lần sau mở lại bằng:
+
+```bash
+ros2 run rviz2 rviz2 -d ~/tb4_ws/gesture_demo.rviz \
+  --ros-args -p use_sim_time:=true
+```
+
+Khi quay video, bố trí **Gazebo bên trái**, **RViz bên phải phía trên**, **webcam bên phải phía dưới**. Quỹ đạo là dữ liệu odometry robot đã đi qua; thao tác trên RViz chỉ để quan sát. Robot vẫn nhận lệnh từ cử chỉ tay.
+
+## 6. Thứ tự demo cần quay
+
+1. Cho thấy webcam có nhãn, Gazebo có robot trong sân trống và RViz có quỹ đạo odometry; `ready=true`.
 2. Vẫy tay → hiện `SELECTED greeting` → Thumb Up → robot chào trái–phải. Giữ Thumb Up cho tới COMPLETED.
 3. Pointing Up → Thumb Up → robot tiến–lùi đủ bốn chu kỳ.
 4. Victory → Thumb Up → robot đi đủ một vòng tròn.
@@ -142,71 +175,3 @@ Nhận diện AI phụ thuộc ánh sáng, góc tay và webcam. Kiểm thử sta
 Kết quả build, 18 bài kiểm tra tự động, kiểm tra webcam thật và chuyển động Gazebo: [VALIDATION.md](VALIDATION.md).
 
 Nguồn chính thức: [MediaPipe Python](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer/python), [các nhãn có sẵn](https://ai.google.dev/edge/mediapipe/solutions/vision/gesture_recognizer), [OpenCV VideoCapture](https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
